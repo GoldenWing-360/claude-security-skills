@@ -1,6 +1,6 @@
 ---
 name: message-bus-security
-description: Secure NATS, RabbitMQ, Kafka, and other message buses - account/vhost isolation, subject/topic permissions (deny-default with explicit grants), producer/consumer authentication (mTLS, NKEYs/JWT, SASL), replay protection, idempotency at the consumer, in-transit and at-rest encryption, cross-cluster trust, audit logging, and the common findings on inherited deployments. Use when introducing a message bus to an architecture, when adding multi-tenancy to an existing bus, after an incident involving cross-tenant message leakage or replay, or when auditing a system that uses a bus (especially distributed-agent / IoT / worker-pool architectures).
+description: Secure NATS, RabbitMQ, Kafka, and similar message buses against misconfiguration and cross-tenant leakage. Covers account or vhost isolation, deny-default subject and topic permissions, producer and consumer authentication, replay protection, consumer-side idempotency, and encryption in transit and at rest. Invoke when introducing a bus, adding multi-tenancy, or after a cross-tenant message-leakage incident.
 ---
 
 # Message Bus Security

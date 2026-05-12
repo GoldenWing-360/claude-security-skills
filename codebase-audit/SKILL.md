@@ -1,6 +1,6 @@
 ---
 name: codebase-audit
-description: Audit an existing or inherited codebase for security and operational risk - scope discipline, day-0 triage (stack, auth, secrets, deploy, blast radius), SAST/SCA tool recipes (semgrep, CodeQL, gitleaks, trivy, npm audit), OWASP Top 10 mapped to concrete grep patterns, auth-surface walkthrough, dependency-surface review, infra-and-deploy review, writing the audit report, and the anti-patterns junior auditors fall into. Use when inheriting a codebase, taking over a client project, doing M&A due diligence, accepting a "audit my app" engagement, joining a new team, or reviewing AI-generated code before shipping.
+description: Audit an inherited or unfamiliar codebase systematically rather than ad-hoc. Covers scope discipline, day-0 triage, SAST and SCA tool recipes (semgrep, CodeQL, gitleaks, trivy), OWASP Top 10 mapped to grep patterns, auth-surface walkthrough, and writing reports that drive remediation. Invoke when inheriting a codebase, accepting an audit engagement, or reviewing AI-generated code before shipping.
 ---
 
 # Codebase Audit — the Inherited-Code Playbook

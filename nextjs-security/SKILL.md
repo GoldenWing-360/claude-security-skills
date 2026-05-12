@@ -1,6 +1,6 @@
 ---
 name: nextjs-security
-description: Find Next.js-specific security issues - middleware auth bypasses (incl. the 2025 CVE class), Server Actions abuse, NEXT_PUBLIC_ env leakage, missing CSP, RSC over-fetch, unvalidated redirects, image-optimization SSRF, and edge vs node runtime confusion. Use when reviewing a Next.js app before launch, after a major version upgrade (esp. 13/14/15/16), or when adding authenticated routes or new Server Actions.
+description: Find Next.js-specific security issues across App Router, Pages Router, and Server Actions. Covers the middleware-bypass class, NEXT_PUBLIC environment leakage, RSC over-fetch, CSP for App Router, open redirects, and next/image SSRF via permissive remotePatterns. Invoke when reviewing a Next.js app before launch, after a major version upgrade, or when adding authenticated routes.
 ---
 
 # Next.js Security

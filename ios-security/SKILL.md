@@ -1,6 +1,6 @@
 ---
 name: ios-security
-description: Harden iOS and macOS apps - Keychain best practices, App Transport Security, certificate pinning tradeoffs, jailbreak / runtime-tampering detection and its limits, secure data storage with NSFileProtection, biometric authentication patterns, app extension and shared-container hygiene, and over-the-air update integrity. Use when shipping a native iOS/macOS app that holds credentials or sensitive data, before App Store submission, after a mobile-app security advisory, or when reviewing a third-party SDK before integration.
+description: Harden iOS and macOS apps against the platform-specific failure modes. Covers Keychain accessibility tiers, App Transport Security, certificate pinning tradeoffs, file protection classes, biometric authentication, jailbreak detection as a signal rather than a defense, and third-party SDK review. Invoke when shipping a native app that holds credentials, before App Store submission, or after a mobile security advisory.
 ---
 
 # iOS / macOS App Security

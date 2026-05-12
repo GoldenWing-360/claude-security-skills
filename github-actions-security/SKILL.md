@@ -1,6 +1,6 @@
 ---
 name: github-actions-security
-description: Harden GitHub Actions workflows - pin third-party actions to commit SHA not tags, scope GITHUB_TOKEN permissions to the minimum, use OIDC instead of long-lived cloud credentials, isolate trusted vs untrusted workflows (the pull_request_target trap), review third-party actions before adoption, protect deployment environments, and detect when a workflow leaked a secret. Use when adding a new workflow, when introducing a third-party action, after a workflow leaked a secret, or when migrating from long-lived AWS/GCP/Cloudflare keys to OIDC.
+description: Harden GitHub Actions workflows against the well-known footguns. Covers SHA-pinned third-party actions, scoped GITHUB_TOKEN permissions, OIDC in place of long-lived cloud credentials, the pull_request_target trap, untrusted-input interpolation, and protected deploy environments. Invoke when adding a new workflow, introducing a third-party action, or migrating from long-lived secrets to OIDC.
 ---
 
 # GitHub Actions Security

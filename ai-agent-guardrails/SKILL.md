@@ -1,6 +1,6 @@
 ---
 name: ai-agent-guardrails
-description: Apply safety controls when an LLM agent has authority to act on real systems - blast-radius classification, dry-run-first patterns, approval gates, idempotency, scope locking, kill-switches, and rollback strategies. Use when designing an autonomous agent, before granting an LLM write access to production, after an agent made an unexpected change (Elementor bulk-edit blowups, mass-rename incidents), or when reviewing an existing agent for safety regressions.
+description: Apply safety controls when an LLM agent has authority to act on real systems. Covers blast-radius classification, dry-run-first patterns, out-of-band approval gates, scope locking, idempotency, kill switches, and rollback strategies. Invoke when designing an autonomous agent, when granting an LLM write access to production, or after an agent makes an unexpected change.
 ---
 
 # AI Agent Guardrails

@@ -1,0 +1,244 @@
+{
+  "version": "1.0.0",
+  "skill_count": 34,
+  "skills": [
+    {
+      "slug": "agent-client-security",
+      "name": "agent-client-security",
+      "domain": "distributed-systems",
+      "description": "Harden native agents running on machines you do not fully control. Covers installer integrity and code signing per platform, OTA update channels with rollback and kill-switch, mTLS with per-agent identity and rotation, local secret storage (Keychain, DPAPI, libsecret), anti-tampering signals, and telemetry hygiene. Invoke when shipping a monitoring agent, RMM tool, CI runner, or IoT controller.",
+      "path": "agent-client-security/SKILL.md"
+    },
+    {
+      "slug": "ai-agent-guardrails",
+      "name": "ai-agent-guardrails",
+      "domain": "ai-llm",
+      "description": "Apply safety controls when an LLM agent has authority to act on real systems. Covers blast-radius classification, dry-run-first patterns, out-of-band approval gates, scope locking, idempotency, kill switches, and rollback strategies. Invoke when designing an autonomous agent, when granting an LLM write access to production, or after an agent makes an unexpected change.",
+      "path": "ai-agent-guardrails/SKILL.md"
+    },
+    {
+      "slug": "api-security",
+      "name": "api-security",
+      "domain": "web-application",
+      "description": "Apply the OWASP API Security Top 10 to REST and GraphQL endpoints. Covers broken object-level authorization (BOLA), mass assignment, excessive data exposure, unrestricted resource consumption, SSRF, broken function-level authorization, and GraphQL depth and complexity limits. Invoke when designing a new API, reviewing one before scaling, or after API abuse (scraping, account takeover).",
+      "path": "api-security/SKILL.md"
+    },
+    {
+      "slug": "auth-hardening",
+      "name": "auth-hardening",
+      "domain": "identity-access",
+      "description": "Apply modern authentication standards instead of historical mistakes. Covers NIST 800-63B-aligned passphrase policy (no rotation theatre), MFA enforcement and factor tiering, session versus JWT tradeoffs, OAuth scope minimization, and account lockout that does not enable enumeration. Invoke when building auth from scratch, planning MFA rollout, or handling a credential-stuffing wave.",
+      "path": "auth-hardening/SKILL.md"
+    },
+    {
+      "slug": "backend-architecture",
+      "name": "backend-architecture",
+      "domain": "architecture",
+      "description": "Design backends that survive redeploys, server reboots, and modest scaling. Covers stateless application servers, state placement (object storage, managed databases, Redis), immutable deploy artifacts, health checks, graceful shutdown, database migrations that don't lock the world, and the twelve-factor baseline. Invoke when designing a new backend, when uploads disappear after a redeploy, or when productionizing a vibe-coded prototype.",
+      "path": "backend-architecture/SKILL.md"
+    },
+    {
+      "slug": "backup-disaster-recovery",
+      "name": "backup-disaster-recovery",
+      "domain": "architecture",
+      "description": "Design backups that actually work when they are needed. Covers RPO and RTO definition, the 3-2-1 rule, encryption before leaving the host, ransomware-resistant immutable storage, restore drills, and the split between operational and legal retention. Invoke when 'we have backups but nobody has restored them' is true, after a near-miss, or before a major migration.",
+      "path": "backup-disaster-recovery/SKILL.md"
+    },
+    {
+      "slug": "cloudflare-hardening",
+      "name": "cloudflare-hardening",
+      "domain": "infrastructure",
+      "description": "Harden a site behind Cloudflare end-to-end, from account to zone to origin. Covers DNS hygiene, origin-IP protection via Authenticated Origin Pulls and IP allowlisting, WAF managed rules, Bot Fight Mode, rate limiting, Transform Rules for security headers, Zero Trust Access for admin paths, and R2 / Pages security. Invoke when onboarding a domain, when the origin IP may be exposed, or after an attack.",
+      "path": "cloudflare-hardening/SKILL.md"
+    },
+    {
+      "slug": "codebase-audit",
+      "name": "codebase-audit",
+      "domain": "audit-review",
+      "description": "Audit an inherited or unfamiliar codebase systematically rather than ad-hoc. Covers scope discipline, day-0 triage, SAST and SCA tool recipes (semgrep, CodeQL, gitleaks, trivy), OWASP Top 10 mapped to grep patterns, auth-surface walkthrough, and writing reports that drive remediation. Invoke when inheriting a codebase, accepting an audit engagement, or reviewing AI-generated code before shipping.",
+      "path": "codebase-audit/SKILL.md"
+    },
+    {
+      "slug": "dach-compliance",
+      "name": "dach-compliance",
+      "domain": "compliance",
+      "description": "Cover Germany, Austria, and Switzerland compliance requirements that have security implications. Covers Impressum content per TMG/MStV/ECG, Datenschutzerkl\u00e4rung per DSGVO/TTDSG/DSG, AGB and Widerrufsbelehrung, AVV/DPA for sub-processors, technical-organizational measures (TOMs), and cookie consent that satisfies all three jurisdictions. Invoke when launching a DACH-facing site, adding third-party services, or reviewing an inherited DACH site.",
+      "path": "dach-compliance/SKILL.md"
+    },
+    {
+      "slug": "dependency-supply-chain",
+      "name": "dependency-supply-chain",
+      "domain": "supply-chain",
+      "description": "Audit and defend against malicious dependencies in npm, pnpm, PyPI, and similar ecosystems. Covers lockfile hygiene, the limits of npm audit, behavior-level scanning with socket.dev, postinstall script review, typosquat and slopsquat detection, and minimum-permission CI runs. Invoke when adding a new dependency, after a supply-chain incident, or as periodic audit.",
+      "path": "dependency-supply-chain/SKILL.md"
+    },
+    {
+      "slug": "distributed-system-audit",
+      "name": "distributed-system-audit",
+      "domain": "distributed-systems",
+      "description": "Audit distributed systems where the highest-impact findings live between the components, not inside any one of them. Covers architecture mapping, trust boundary enumeration, per-channel protocol review (replay, ordering, forgery), STRIDE-lite threat modeling, failure-mode analysis, and forensic accountability. Invoke when auditing client / server, microservices, IoT backends, or agent-platform architectures.",
+      "path": "distributed-system-audit/SKILL.md"
+    },
+    {
+      "slug": "docker-container-security",
+      "name": "docker-container-security",
+      "domain": "infrastructure",
+      "description": "Run containers with a defensive baseline that survives production. Covers non-root users, read-only filesystems, dropped Linux capabilities, secret mounts instead of build-time bake-in, image scanning with trivy, distroless and minimal base images, and the Docker-bypasses-UFW firewall pitfall. Invoke when adding Docker to a VPS with UFW, writing a new Dockerfile, or pushing an image to a public registry.",
+      "path": "docker-container-security/SKILL.md"
+    },
+    {
+      "slug": "email-deliverability-security",
+      "name": "email-deliverability-security",
+      "domain": "email",
+      "description": "Configure email authentication so legitimate mail lands and spoofed mail is blocked. Covers SPF, DKIM, DMARC (with the p=none \u2192 p=quarantine \u2192 p=reject migration path), MTA-STS, TLS-RPT, ARC, and BIMI. Invoke when launching a new sending domain, when domains are being spoofed, or when transactional email is landing in spam.",
+      "path": "email-deliverability-security/SKILL.md"
+    },
+    {
+      "slug": "file-upload-security",
+      "name": "file-upload-security",
+      "domain": "web-application",
+      "description": "Accept user file uploads without introducing remote code execution, stored XSS, or polyglot attacks. Covers magic-byte validation, strict type allowlists, image re-encoding to defang embedded payloads, EXIF stripping, virus scanning, path-safe storage keys, and serving via a separate origin with Content-Disposition. Invoke when adding upload to a new endpoint or migrating from local-disk storage to object storage.",
+      "path": "file-upload-security/SKILL.md"
+    },
+    {
+      "slug": "gdpr-technical-controls",
+      "name": "gdpr-technical-controls",
+      "domain": "compliance",
+      "description": "Implement the technical side of GDPR and EU privacy compliance. Covers data inventory, subject-access (SAR) and deletion endpoints, anonymization patterns, log scrubbing, the 72-hour breach notification path, and sub-processor (DPA / AVV) tracking. Invoke when building a product handling EU resident data, responding to a SAR, or preparing for a Datenschutz audit.",
+      "path": "gdpr-technical-controls/SKILL.md"
+    },
+    {
+      "slug": "github-actions-security",
+      "name": "github-actions-security",
+      "domain": "supply-chain",
+      "description": "Harden GitHub Actions workflows against the well-known footguns. Covers SHA-pinned third-party actions, scoped GITHUB_TOKEN permissions, OIDC in place of long-lived cloud credentials, the pull_request_target trap, untrusted-input interpolation, and protected deploy environments. Invoke when adding a new workflow, introducing a third-party action, or migrating from long-lived secrets to OIDC.",
+      "path": "github-actions-security/SKILL.md"
+    },
+    {
+      "slug": "honeypot-tarpits",
+      "name": "honeypot-tarpits",
+      "domain": "detection-monitoring",
+      "description": "Lightweight detection techniques that work without a SIEM. Covers fake admin paths, decoy .env files, canary tokens, fake API keys planted in JS bundles, and tarpits that slow automated scanners. Invoke when public services see constant automated probing, when complementing fail2ban and WAF rules, or when high-signal detection is needed on a small budget.",
+      "path": "honeypot-tarpits/SKILL.md"
+    },
+    {
+      "slug": "incident-response",
+      "name": "incident-response",
+      "domain": "incident-response",
+      "description": "Run a structured response to a suspected web or server compromise. Follows SANS PICERL \u2014 Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned \u2014 and includes a post-mortem template. Invoke when a site is defaced, when malware or webshells appear, when admin accounts arrive unannounced, or when a provider sends an abuse notice.",
+      "path": "incident-response/SKILL.md"
+    },
+    {
+      "slug": "ios-security",
+      "name": "ios-security",
+      "domain": "mobile",
+      "description": "Harden iOS and macOS apps against the platform-specific failure modes. Covers Keychain accessibility tiers, App Transport Security, certificate pinning tradeoffs, file protection classes, biometric authentication, jailbreak detection as a signal rather than a defense, and third-party SDK review. Invoke when shipping a native app that holds credentials, before App Store submission, or after a mobile security advisory.",
+      "path": "ios-security/SKILL.md"
+    },
+    {
+      "slug": "kubernetes-security",
+      "name": "kubernetes-security",
+      "domain": "infrastructure",
+      "description": "Harden a Kubernetes cluster's data plane and control plane. Covers Pod Security Standards (Restricted, Baseline, Privileged), RBAC with least privilege, NetworkPolicy default-deny, secrets management without raw env vars, admission controllers (Kyverno, OPA Gatekeeper), image scanning, and audit logging. Invoke when provisioning a new cluster, inheriting one, or before adding a new tenant to a shared cluster.",
+      "path": "kubernetes-security/SKILL.md"
+    },
+    {
+      "slug": "llm-app-security",
+      "name": "llm-app-security",
+      "domain": "ai-llm",
+      "description": "Apply operational controls to applications built on the Anthropic API or similar LLM SDKs. Maps the OWASP LLM Top 10 to practical controls, plus rate limiting, cost caps, PII scrubbing, audit logging, model-version pinning, and an AI-incident response playbook. Invoke when shipping an LLM feature to production, when handling an abuse complaint, or after a model-provider advisory.",
+      "path": "llm-app-security/SKILL.md"
+    },
+    {
+      "slug": "llm-coding-failure-modes",
+      "name": "llm-coding-failure-modes",
+      "domain": "ai-llm",
+      "description": "Recognize the recurring security failure modes of LLM coding agents \u2014 Claude Code, Copilot, Cursor, Windsurf, and similar. Covers bulk operations without per-item review, safety-guard bypass as friction removal, acting on indirect injection, secrets in logs and commits, slopsquatting, outdated training patterns, sycophancy on insecure proposals, and silent error swallowing. Invoke when reviewing LLM-written code, designing a coding agent's guardrails, or onboarding a team to LLM-assisted workflows.",
+      "path": "llm-coding-failure-modes/SKILL.md"
+    },
+    {
+      "slug": "log-strategy",
+      "name": "log-strategy",
+      "domain": "detection-monitoring",
+      "description": "Design logging that supports investigations without becoming a privacy liability. Covers what to log and what never to log (PII, secrets), structured logging, retention tiers, centralization choices, alert routing, and the operational-versus-access-versus-audit log split. Invoke when starting a new service, when investigation revealed missing log fields, or when log volume is becoming expensive.",
+      "path": "log-strategy/SKILL.md"
+    },
+    {
+      "slug": "mcp-security",
+      "name": "mcp-security",
+      "domain": "ai-llm",
+      "description": "Audit Model Context Protocol server configurations and apply least-privilege scoping. Covers MCP inventory, capability risk-tiering, secret detection in configuration, malicious or compromised package indicators, and the lifecycle from install through rotation to revocation. Invoke before granting an MCP write access to production, after an MCP security advisory, or as periodic audit.",
+      "path": "mcp-security/SKILL.md"
+    },
+    {
+      "slug": "message-bus-security",
+      "name": "message-bus-security",
+      "domain": "distributed-systems",
+      "description": "Secure NATS, RabbitMQ, Kafka, and similar message buses against misconfiguration and cross-tenant leakage. Covers account or vhost isolation, deny-default subject and topic permissions, producer and consumer authentication, replay protection, consumer-side idempotency, and encryption in transit and at rest. Invoke when introducing a bus, adding multi-tenancy, or after a cross-tenant message-leakage incident.",
+      "path": "message-bus-security/SKILL.md"
+    },
+    {
+      "slug": "nextjs-security",
+      "name": "nextjs-security",
+      "domain": "web-application",
+      "description": "Find Next.js-specific security issues across App Router, Pages Router, and Server Actions. Covers the middleware-bypass class, NEXT_PUBLIC environment leakage, RSC over-fetch, CSP for App Router, open redirects, and next/image SSRF via permissive remotePatterns. Invoke when reviewing a Next.js app before launch, after a major version upgrade, or when adding authenticated routes.",
+      "path": "nextjs-security/SKILL.md"
+    },
+    {
+      "slug": "payload-cms-security",
+      "name": "payload-cms-security",
+      "domain": "web-application",
+      "description": "Harden Payload CMS deployments against access-control and upload-related issues. Covers collection and field-level access functions, hook safety, file upload validation, GraphQL and REST surface, admin UI exposure, and multi-tenant isolation strategies. Invoke before shipping a Payload app to production, opening admin to non-developers, or after a Payload version upgrade.",
+      "path": "payload-cms-security/SKILL.md"
+    },
+    {
+      "slug": "postgres-hardening",
+      "name": "postgres-hardening",
+      "domain": "infrastructure",
+      "description": "Harden a PostgreSQL deployment whether managed or self-hosted. Covers pg_hba network and authentication rules, role separation (read-only, read-write, migration), row-level security for multi-tenant data, TLS configuration, backup encryption, and pg_audit logging. Invoke when provisioning a new Postgres, before opening it to a new app, or when reviewing a multi-tenant schema for isolation gaps.",
+      "path": "postgres-hardening/SKILL.md"
+    },
+    {
+      "slug": "prompt-injection-defense",
+      "name": "prompt-injection-defense",
+      "domain": "ai-llm",
+      "description": "Contain direct and indirect prompt injection in LLM-integrated applications. Covers source-of-trust tagging, tool-use confirmation after untrusted input, output validation, markdown-image exfiltration prevention, and context-window hygiene. Invoke when building any app where untrusted text reaches an LLM, when the LLM has tools that act on real systems, or after a suspected injection incident.",
+      "path": "prompt-injection-defense/SKILL.md"
+    },
+    {
+      "slug": "secret-hygiene",
+      "name": "secret-hygiene",
+      "domain": "identity-access",
+      "description": "Find, rotate, and prevent leaked credentials across repositories and disk. Covers leak detection with gitleaks and trufflehog, rotation order (the leaked secret first, then outward), git history purge with git-filter-repo, and prevention via pre-commit scanning. Invoke when a secret was committed to git, when a private repo went public, or as periodic audit.",
+      "path": "secret-hygiene/SKILL.md"
+    },
+    {
+      "slug": "site-server-audit",
+      "name": "site-server-audit",
+      "domain": "audit-review",
+      "description": "Audit a public-facing site or server for common misconfigurations without sending exploit traffic. Covers DNS hygiene, TLS and HSTS, security headers, exposed paths (.git, .env, backups), cookie flags, and software fingerprinting. Invoke when onboarding a new client site, before launch, after infrastructure changes, or as periodic re-audit.",
+      "path": "site-server-audit/SKILL.md"
+    },
+    {
+      "slug": "stripe-webhook-security",
+      "name": "stripe-webhook-security",
+      "domain": "web-application",
+      "description": "Verify and process Stripe webhooks safely against the real-world failure modes. Covers signature verification against the raw body, idempotency keys, replay protection, event-type allowlists, the partial-refund and dual-currency traps, and re-fetching authoritative state from Stripe for real-money actions. Invoke when wiring webhooks for the first time, when adding a new event type, or after a payments incident.",
+      "path": "stripe-webhook-security/SKILL.md"
+    },
+    {
+      "slug": "vps-hardening",
+      "name": "vps-hardening",
+      "domain": "infrastructure",
+      "description": "Baseline-harden a Debian or Ubuntu VPS in roughly thirty minutes. Covers SSH key-only authentication, UFW firewall, fail2ban with web-app jails, unattended security upgrades, kernel sysctls, journalctl retention, and sudo policy. Invoke when provisioning a new VPS, inheriting one without documented hardening, or before exposing a service to the public internet.",
+      "path": "vps-hardening/SKILL.md"
+    },
+    {
+      "slug": "wordpress-hardening",
+      "name": "wordpress-hardening",
+      "domain": "web-application",
+      "description": "Detect and contain WordPress compromises, then harden the install against re-entry. Covers webshell detection across the Sid Gifari, WSO, FilesMan, b374k and c99 families, backdoored mu-plugins, malicious admin accounts, and shared-hosting lateral-movement defense. Invoke when a WordPress site shows unexpected files, suspicious admin accounts, defaced pages, or when hardening a fresh install on shared hosting.",
+      "path": "wordpress-hardening/SKILL.md"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 name: distributed-system-audit
-description: Audit a distributed system (client/server, agent/orchestrator, microservices, IoT backend, multi-tenant SaaS with workers) - map the architecture and trust boundaries first, per-component trust analysis (what does it authenticate, what does it verify), protocol audit (replay, ordering, forgery), message-bus considerations, time-related bugs across nodes, failure-mode audit (partial failure, network partition, agent loss), forensic accountability, multi-tenant isolation, and the findings classes specific to distributed systems. Use when auditing a system with multiple communicating processes, when due-diligence on an acquisition that operates a fleet of agents/workers, when handing over operations of a multi-component product, or after an incident that crossed component boundaries.
+description: Audit distributed systems where the highest-impact findings live between the components, not inside any one of them. Covers architecture mapping, trust boundary enumeration, per-channel protocol review (replay, ordering, forgery), STRIDE-lite threat modeling, failure-mode analysis, and forensic accountability. Invoke when auditing client / server, microservices, IoT backends, or agent-platform architectures.
 ---
 
 # Distributed System Audit

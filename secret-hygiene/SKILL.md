@@ -1,6 +1,6 @@
 ---
 name: secret-hygiene
-description: Find, rotate, and prevent leaked credentials - API keys, tokens, database passwords, SSH keys, and .env files. Use when onboarding a repo or hosting account, after a suspected leak, before making a private repo public, when a contributor leaves, or as a periodic hygiene pass. Covers detection, rotation order, and git-history purge.
+description: Find, rotate, and prevent leaked credentials across repositories and disk. Covers leak detection with gitleaks and trufflehog, rotation order (the leaked secret first, then outward), git history purge with git-filter-repo, and prevention via pre-commit scanning. Invoke when a secret was committed to git, when a private repo went public, or as periodic audit.
 ---
 
 # Secret Hygiene

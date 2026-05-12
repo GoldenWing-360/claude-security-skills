@@ -1,6 +1,6 @@
 ---
 name: payload-cms-security
-description: Harden Payload CMS deployments - collection and field-level access control, authentication strategies, beforeChange/afterRead hook safety, admin UI exposure, file upload validation, GraphQL and REST surface, multi-tenant isolation, and the env vs database secret split. Use when shipping a Payload app to production, before opening admin to non-developers, after a Payload version upgrade, or when adding multi-tenant collections.
+description: Harden Payload CMS deployments against access-control and upload-related issues. Covers collection and field-level access functions, hook safety, file upload validation, GraphQL and REST surface, admin UI exposure, and multi-tenant isolation strategies. Invoke before shipping a Payload app to production, opening admin to non-developers, or after a Payload version upgrade.
 ---
 
 # Payload CMS Security

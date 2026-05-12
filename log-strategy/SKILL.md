@@ -1,6 +1,6 @@
 ---
 name: log-strategy
-description: Design application and infrastructure logging that supports security investigations without becoming a privacy or storage liability - what to log, what never to log (PII, secrets), structured logging, retention tiers, log centralization choices, alert routing, and the audit-log vs operational-log split. Use when starting a new service, when an investigation revealed missing log fields, when logs are leaking PII, when log volume is becoming expensive, or when consolidating to a central logging stack.
+description: Design logging that supports investigations without becoming a privacy liability. Covers what to log and what never to log (PII, secrets), structured logging, retention tiers, centralization choices, alert routing, and the operational-versus-access-versus-audit log split. Invoke when starting a new service, when investigation revealed missing log fields, or when log volume is becoming expensive.
 ---
 
 # Log Strategy

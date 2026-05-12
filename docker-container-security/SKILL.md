@@ -1,6 +1,6 @@
 ---
 name: docker-container-security
-description: Run Docker containers with a defensive baseline - non-root users, read-only filesystems, dropped Linux capabilities, secret-mount patterns instead of build-time bake-in, image scanning with trivy, distroless and minimal base images, network segmentation, and the Docker+UFW firewall-bypass pitfall. Use when adding Docker to a VPS with UFW, writing a new Dockerfile, pushing an image to a public registry, or as a periodic container audit.
+description: Run containers with a defensive baseline that survives production. Covers non-root users, read-only filesystems, dropped Linux capabilities, secret mounts instead of build-time bake-in, image scanning with trivy, distroless and minimal base images, and the Docker-bypasses-UFW firewall pitfall. Invoke when adding Docker to a VPS with UFW, writing a new Dockerfile, or pushing an image to a public registry.
 ---
 
 # Docker / Container Security

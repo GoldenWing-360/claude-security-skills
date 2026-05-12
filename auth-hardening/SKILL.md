@@ -1,6 +1,6 @@
 ---
 name: auth-hardening
-description: Apply modern authentication standards - NIST 800-63B-aligned passphrase policy (no rotation theatre), MFA enforcement strategy, session cookies vs JWT tradeoffs, OAuth scope minimization, account lockout that does not enable enumeration, password reset and email-change flows without takeover, and breached-credential detection. Use when building auth from scratch, when reviewing an existing system, when handling a credential-stuffing wave, when planning MFA rollout, or after a password-reset abuse incident.
+description: Apply modern authentication standards instead of historical mistakes. Covers NIST 800-63B-aligned passphrase policy (no rotation theatre), MFA enforcement and factor tiering, session versus JWT tradeoffs, OAuth scope minimization, and account lockout that does not enable enumeration. Invoke when building auth from scratch, planning MFA rollout, or handling a credential-stuffing wave.
 ---
 
 # Auth Hardening

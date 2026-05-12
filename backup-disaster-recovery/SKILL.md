@@ -1,6 +1,6 @@
 ---
 name: backup-disaster-recovery
-description: Design backups that actually work when you need them - RPO/RTO definition, the 3-2-1 rule (3 copies, 2 media, 1 off-site), encrypted backups, ransomware-resistant immutable storage, restore drills (a backup you have not restored is a wish), classes of failure you are protecting against, automation, monitoring, and the legal-retention vs operational-retention split. Use when "we have backups but nobody has ever restored them", when adding a new system that holds production data, after a near-miss or actual data-loss incident, before a major migration or upgrade, or as a periodic re-audit (quarterly is reasonable).
+description: Design backups that actually work when they are needed. Covers RPO and RTO definition, the 3-2-1 rule, encryption before leaving the host, ransomware-resistant immutable storage, restore drills, and the split between operational and legal retention. Invoke when 'we have backups but nobody has restored them' is true, after a near-miss, or before a major migration.
 ---
 
 # Backups & Disaster Recovery

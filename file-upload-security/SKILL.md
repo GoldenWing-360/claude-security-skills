@@ -1,6 +1,6 @@
 ---
 name: file-upload-security
-description: Accept user file uploads safely - magic-byte validation (not MIME), strict extension/type allowlists, size and rate limits, image re-encoding to defang polyglot files and embedded payloads, EXIF and metadata stripping, virus scanning for documents, path-traversal-safe storage keys, serving via separate origin with Content-Disposition, signed URLs for private content, and presigned-PUT to bypass the app server for large uploads. Use when adding file upload to a new endpoint, when a user-uploaded file caused a security incident, when migrating from local-disk uploads to object storage, or when reviewing an existing upload feature for security gaps.
+description: Accept user file uploads without introducing remote code execution, stored XSS, or polyglot attacks. Covers magic-byte validation, strict type allowlists, image re-encoding to defang embedded payloads, EXIF stripping, virus scanning, path-safe storage keys, and serving via a separate origin with Content-Disposition. Invoke when adding upload to a new endpoint or migrating from local-disk storage to object storage.
 ---
 
 # File Upload Security

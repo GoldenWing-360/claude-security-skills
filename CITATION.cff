@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use these skills in research, training material, or commercial work, please cite the project."
+title: "Claude Code Security Skills"
+abstract: >-
+  Defensive security skills for Claude Code and other LLM coding agents.
+  Covers web, server, distributed-system, AI / LLM, identity, supply-chain,
+  compliance, detection, and incident-response domains as self-contained
+  SKILL.md files with YAML frontmatter for agent discovery.
+authors:
+  - name: "GoldenWing"
+    website: "https://goldenwing.at"
+repository-code: "https://github.com/GoldenWing-360/claude-security-skills"
+url: "https://github.com/GoldenWing-360/claude-security-skills"
+license: MIT
+type: software
+keywords:
+  - claude-code
+  - defensive-security
+  - llm-security
+  - mcp-security
+  - prompt-injection
+  - owasp-llm
+  - incident-response
+date-released: 2026-05-12

@@ -1,6 +1,6 @@
 ---
 name: kubernetes-security
-description: Harden a Kubernetes cluster - Pod Security Standards (Restricted/Baseline/Privileged), RBAC with least privilege, NetworkPolicy default-deny, secrets management without env vars (SealedSecrets/External-Secrets/SOPS), admission controllers (Kyverno/OPA Gatekeeper), image scanning, API-server access, audit logging, and the common findings on inherited clusters. Use when provisioning a new cluster, when onboarding to one you inherited, before opening a cluster to a new tenant, after a Kubernetes CVE, or as a periodic audit. Applies to managed K8s (EKS, GKE, AKS, DOKS) and self-hosted (k3s, kubeadm) alike.
+description: Harden a Kubernetes cluster's data plane and control plane. Covers Pod Security Standards (Restricted, Baseline, Privileged), RBAC with least privilege, NetworkPolicy default-deny, secrets management without raw env vars, admission controllers (Kyverno, OPA Gatekeeper), image scanning, and audit logging. Invoke when provisioning a new cluster, inheriting one, or before adding a new tenant to a shared cluster.
 ---
 
 # Kubernetes Security

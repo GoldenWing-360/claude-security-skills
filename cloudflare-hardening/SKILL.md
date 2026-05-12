@@ -1,6 +1,6 @@
 ---
 name: cloudflare-hardening
-description: Harden a site behind Cloudflare - WAF Managed Rules, Bot Fight, Rate Limiting, Transform Rules for security headers, Zero Trust Access for admin paths, Cache Rules, R2 bucket exposure, Pages security, and origin-IP protection. Use when onboarding a domain to Cloudflare, when a site behind CF was attacked, when origin IP is suspected exposed, or when reviewing Cloudflare settings for a public site.
+description: Harden a site behind Cloudflare end-to-end, from account to zone to origin. Covers DNS hygiene, origin-IP protection via Authenticated Origin Pulls and IP allowlisting, WAF managed rules, Bot Fight Mode, rate limiting, Transform Rules for security headers, Zero Trust Access for admin paths, and R2 / Pages security. Invoke when onboarding a domain, when the origin IP may be exposed, or after an attack.
 ---
 
 # Cloudflare Hardening

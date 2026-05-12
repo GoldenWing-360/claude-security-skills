@@ -1,6 +1,6 @@
 ---
 name: postgres-hardening
-description: Harden a PostgreSQL deployment - pg_hba.conf network and auth rules, role separation (read-only vs read-write vs migration), row-level security (RLS) for multi-tenant data, backup encryption, pg_audit logging, and version-upgrade discipline. Use when provisioning a new Postgres, before opening it to a new app, after a Postgres CVE, when reviewing a multi-tenant schema for data-isolation gaps, or when planning a major-version upgrade.
+description: Harden a PostgreSQL deployment whether managed or self-hosted. Covers pg_hba network and authentication rules, role separation (read-only, read-write, migration), row-level security for multi-tenant data, TLS configuration, backup encryption, and pg_audit logging. Invoke when provisioning a new Postgres, before opening it to a new app, or when reviewing a multi-tenant schema for isolation gaps.
 ---
 
 # PostgreSQL Hardening

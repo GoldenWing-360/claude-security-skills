@@ -1,6 +1,6 @@
 ---
 name: llm-coding-failure-modes
-description: The 10+ recurring security failure modes of LLM coding agents (Claude, Copilot, Cursor, Windsurf, etc.) - bulk operations without per-item review, safety-guard bypass as friction-removal, indirect injection acted on, secrets in logs and commits, hallucinated packages (slopsquatting), outdated training-data patterns, LLM output trusted as authoritative, broadest-scope-by-default permissions, silent error swallowing, sycophancy on insecure proposals, and context loss after compaction. Use when reviewing LLM-written code, when designing a coding agent's system prompt or guardrails, when onboarding a team to "vibe coding" practices, when investigating an incident caused by an agent, or when auditing an existing agent's blast radius.
+description: Recognize the recurring security failure modes of LLM coding agents — Claude Code, Copilot, Cursor, Windsurf, and similar. Covers bulk operations without per-item review, safety-guard bypass as friction removal, acting on indirect injection, secrets in logs and commits, slopsquatting, outdated training patterns, sycophancy on insecure proposals, and silent error swallowing. Invoke when reviewing LLM-written code, designing a coding agent's guardrails, or onboarding a team to LLM-assisted workflows.
 ---
 
 # LLM Coding Failure Modes

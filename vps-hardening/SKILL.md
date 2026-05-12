@@ -1,6 +1,6 @@
 ---
 name: vps-hardening
-description: Baseline-harden a fresh Linux VPS (Debian/Ubuntu) - SSH key-only auth with no root login, UFW firewall, fail2ban for SSH and web apps, unattended-upgrades, kernel sysctls, journalctl retention, sudo policy, and a non-root deploy user. Use when provisioning a new VPS, when inheriting an existing one without documented hardening, before exposing a service to the public internet, or as a periodic re-audit.
+description: Baseline-harden a Debian or Ubuntu VPS in roughly thirty minutes. Covers SSH key-only authentication, UFW firewall, fail2ban with web-app jails, unattended security upgrades, kernel sysctls, journalctl retention, and sudo policy. Invoke when provisioning a new VPS, inheriting one without documented hardening, or before exposing a service to the public internet.
 ---
 
 # VPS Hardening

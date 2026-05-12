@@ -1,6 +1,6 @@
 ---
 name: dach-compliance
-description: DACH-specific (Germany, Austria, Switzerland) compliance requirements with security implications - Impressum content per TMG/MStV/ECG, Datenschutzerklärung per DSGVO/TTDSG/DSG/FADP, AGB basics, AVV/DPA when processing on behalf of others, technical-organizational measures (TOMs), and cookie consent that satisfies all three jurisdictions. Use when launching a site for a DACH audience, when adding new third-party services to a DACH site, when reviewing an inherited DACH site, or when handling an Abmahnung (cease-and-desist).
+description: Cover Germany, Austria, and Switzerland compliance requirements that have security implications. Covers Impressum content per TMG/MStV/ECG, Datenschutzerklärung per DSGVO/TTDSG/DSG, AGB and Widerrufsbelehrung, AVV/DPA for sub-processors, technical-organizational measures (TOMs), and cookie consent that satisfies all three jurisdictions. Invoke when launching a DACH-facing site, adding third-party services, or reviewing an inherited DACH site.
 ---
 
 # DACH Compliance (DE / AT / CH)

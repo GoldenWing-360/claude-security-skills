@@ -1,6 +1,6 @@
 ---
 name: llm-app-security
-description: Apply OWASP-LLM-style operational controls to applications built on the Anthropic API or similar LLM SDKs - rate limiting, cost caps, abuse detection, PII scrubbing, audit logging, response moderation, model-version pinning, and incident response for AI features. Use when shipping an LLM feature to production, when an LLM app sees public traffic, when handling an abuse complaint about an LLM-powered feature, or when an AI feature gets quoted in the press for the wrong reason.
+description: Apply operational controls to applications built on the Anthropic API or similar LLM SDKs. Maps the OWASP LLM Top 10 to practical controls, plus rate limiting, cost caps, PII scrubbing, audit logging, model-version pinning, and an AI-incident response playbook. Invoke when shipping an LLM feature to production, when handling an abuse complaint, or after a model-provider advisory.
 ---
 
 # LLM App Security

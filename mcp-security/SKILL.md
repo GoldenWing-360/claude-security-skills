@@ -1,6 +1,6 @@
 ---
 name: mcp-security
-description: Audit and harden Model Context Protocol (MCP) server configurations - inventory installed servers, risk-classify their capabilities, detect secrets in config, spot malicious or compromised MCP packages, and apply least-privilege scoping. Use when adding a new MCP, before granting an MCP write access to production, after a security advisory affecting an MCP, when onboarding a contractor's machine, or as a periodic audit. Especially relevant for setups with many MCPs (Hostinger, Cloudflare, Stripe, WordPress, email, calendar, CRM).
+description: Audit Model Context Protocol server configurations and apply least-privilege scoping. Covers MCP inventory, capability risk-tiering, secret detection in configuration, malicious or compromised package indicators, and the lifecycle from install through rotation to revocation. Invoke before granting an MCP write access to production, after an MCP security advisory, or as periodic audit.
 ---
 
 # MCP Security

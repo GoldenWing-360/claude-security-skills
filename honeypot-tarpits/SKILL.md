@@ -1,6 +1,6 @@
 ---
 name: honeypot-tarpits
-description: Lightweight deception and detection techniques - fake admin paths that trigger alerts, decoy .env and config files at scanner-friendly paths, canary tokens that fire when accessed, fake API keys planted in JS bundles, and tarpits that slow automated scanners without harming legitimate users. Use when public services see constant automated probing, when you want detection without paying for a SIEM, when complementing fail2ban + WAF rules, or after detecting reconnaissance against a specific service.
+description: Lightweight detection techniques that work without a SIEM. Covers fake admin paths, decoy .env files, canary tokens, fake API keys planted in JS bundles, and tarpits that slow automated scanners. Invoke when public services see constant automated probing, when complementing fail2ban and WAF rules, or when high-signal detection is needed on a small budget.
 ---
 
 # Honeypots and Tarpits

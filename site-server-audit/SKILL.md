@@ -1,6 +1,6 @@
 ---
 name: site-server-audit
-description: Audit a public-facing website or server for common misconfigurations - DNS hygiene, TLS/HSTS, security headers, exposed secrets (.git, .env, backups), cookie flags, open admin endpoints, and outdated software fingerprints. Use when onboarding a new client site, before launch, after a deploy that touched infrastructure, or when investigating "is this site safe to point users at".
+description: Audit a public-facing site or server for common misconfigurations without sending exploit traffic. Covers DNS hygiene, TLS and HSTS, security headers, exposed paths (.git, .env, backups), cookie flags, and software fingerprinting. Invoke when onboarding a new client site, before launch, after infrastructure changes, or as periodic re-audit.
 ---
 
 # Site / Server Audit

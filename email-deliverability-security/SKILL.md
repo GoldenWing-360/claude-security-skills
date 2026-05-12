@@ -1,6 +1,6 @@
 ---
 name: email-deliverability-security
-description: Configure email authentication so legitimate mail lands and spoofed mail is blocked - SPF, DKIM, DMARC, BIMI, ARC, MTA-STS, TLS-RPT, and the safe `p=none` → `p=quarantine` → `p=reject` migration path. Use when launching a new sending domain, when your domain is being spoofed (phishing reports), when transactional email is landing in spam, when consolidating to a single ESP, or after an Abmahnung for unauthorized sending.
+description: Configure email authentication so legitimate mail lands and spoofed mail is blocked. Covers SPF, DKIM, DMARC (with the p=none → p=quarantine → p=reject migration path), MTA-STS, TLS-RPT, ARC, and BIMI. Invoke when launching a new sending domain, when domains are being spoofed, or when transactional email is landing in spam.
 ---
 
 # Email Authentication & Deliverability Security

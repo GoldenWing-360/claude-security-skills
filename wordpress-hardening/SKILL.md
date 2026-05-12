@@ -1,6 +1,6 @@
 ---
 name: wordpress-hardening
-description: Detect, contain, and prevent WordPress compromises - webshells (Sid Gifari / WSO / FilesMan family), backdoored mu-plugins, malicious admin users, and supply-chain plugin tampering. Use when a WP site shows unexpected files, suspicious admin accounts, defaced pages, spam injection in posts, sudden traffic anomalies, or when hardening a fresh WP install on shared hosting.
+description: Detect and contain WordPress compromises, then harden the install against re-entry. Covers webshell detection across the Sid Gifari, WSO, FilesMan, b374k and c99 families, backdoored mu-plugins, malicious admin accounts, and shared-hosting lateral-movement defense. Invoke when a WordPress site shows unexpected files, suspicious admin accounts, defaced pages, or when hardening a fresh install on shared hosting.
 ---
 
 # WordPress Hardening

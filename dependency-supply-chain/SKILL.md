@@ -1,6 +1,6 @@
 ---
 name: dependency-supply-chain
-description: Audit and defend against malicious dependencies - lockfile hygiene, npm/pnpm/yarn audit and its limits, behavior-level scanning with socket.dev / deps.dev, postinstall script review, typosquat detection, package pinning strategy, minimum-permission CI runs, and incident response for a compromised package. Use when adding a new dependency, after a supply-chain wave (npm typosquat, package takeover), as a periodic audit, or when reviewing an inherited node_modules tree.
+description: Audit and defend against malicious dependencies in npm, pnpm, PyPI, and similar ecosystems. Covers lockfile hygiene, the limits of npm audit, behavior-level scanning with socket.dev, postinstall script review, typosquat and slopsquat detection, and minimum-permission CI runs. Invoke when adding a new dependency, after a supply-chain incident, or as periodic audit.
 ---
 
 # Dependency / Supply-Chain Security

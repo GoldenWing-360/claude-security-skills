@@ -1,6 +1,6 @@
 ---
 name: agent-client-security
-description: Harden native agents and clients running on machines you do not fully control - installer integrity and distribution-channel signing, OTA / update channel with rollback and kill-switch, code signing per platform (Authenticode, Apple notarization, GPG), agent ↔ control-plane authentication (mTLS, per-agent identity, certificate provisioning), local secret storage (Keychain, DPAPI, libsecret, file permissions), anti-tampering signals, privilege model (root only where needed), telemetry hygiene (no PII or secrets), and the threat model of code running on the customer's machine. Use when shipping an endpoint agent (monitoring, RMM, deployment, CI runner, MDM, IoT controller), when designing the installer / updater for such an agent, after a tampering incident, or when auditing one before adoption.
+description: Harden native agents running on machines you do not fully control. Covers installer integrity and code signing per platform, OTA update channels with rollback and kill-switch, mTLS with per-agent identity and rotation, local secret storage (Keychain, DPAPI, libsecret), anti-tampering signals, and telemetry hygiene. Invoke when shipping a monitoring agent, RMM tool, CI runner, or IoT controller.
 ---
 
 # Agent / Client Security

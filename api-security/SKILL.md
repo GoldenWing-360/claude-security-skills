@@ -1,6 +1,6 @@
 ---
 name: api-security
-description: Harden REST and GraphQL APIs against the OWASP API Top 10 - broken object-level authorization (BOLA), broken authentication, broken object property authorization (mass assignment, excessive data exposure), unrestricted resource consumption, broken function-level authorization, SSRF, security misconfiguration, improper inventory management, unsafe consumption of third-party APIs, and admin endpoints. Use when designing a new API, reviewing an existing one before scaling, after an abuse report (data scraping, account takeover via API), when adding a public-facing endpoint, or when an API is feeding a mobile app where the client-side cannot be trusted.
+description: Apply the OWASP API Security Top 10 to REST and GraphQL endpoints. Covers broken object-level authorization (BOLA), mass assignment, excessive data exposure, unrestricted resource consumption, SSRF, broken function-level authorization, and GraphQL depth and complexity limits. Invoke when designing a new API, reviewing one before scaling, or after API abuse (scraping, account takeover).
 ---
 
 # API Security

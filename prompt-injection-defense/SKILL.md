@@ -1,6 +1,6 @@
 ---
 name: prompt-injection-defense
-description: Harden LLM-integrated applications against direct and indirect prompt injection - untrusted-content tagging, instruction isolation, output validation, tool-use confirmation, context-window poisoning detection, and exfiltration prevention. Use when building or reviewing apps that pass user input or fetched content to an LLM, when an LLM has tools that act on real systems, after a suspected injection incident, or when designing an agent that reads from the web/email/tickets.
+description: Contain direct and indirect prompt injection in LLM-integrated applications. Covers source-of-trust tagging, tool-use confirmation after untrusted input, output validation, markdown-image exfiltration prevention, and context-window hygiene. Invoke when building any app where untrusted text reaches an LLM, when the LLM has tools that act on real systems, or after a suspected injection incident.
 ---
 
 # Prompt Injection Defense

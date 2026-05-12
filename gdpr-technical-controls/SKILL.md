@@ -1,6 +1,6 @@
 ---
 name: gdpr-technical-controls
-description: Implement the technical side of GDPR / EU privacy compliance - data inventory, subject-access (SAR) and deletion endpoints, anonymization vs pseudonymization, log scrubbing, the 72-hour breach notification path, sub-processor (DPA / AVV) implications, cookie/consent integration, and cross-border transfer constraints. Use when building or shipping a product that handles EU resident data, when responding to a Subject Access Request, when preparing for a Datenschutz audit, or when adding a new third-party processor.
+description: Implement the technical side of GDPR and EU privacy compliance. Covers data inventory, subject-access (SAR) and deletion endpoints, anonymization patterns, log scrubbing, the 72-hour breach notification path, and sub-processor (DPA / AVV) tracking. Invoke when building a product handling EU resident data, responding to a SAR, or preparing for a Datenschutz audit.
 ---
 
 # GDPR — Technical Controls

@@ -1,6 +1,6 @@
 ---
 name: backend-architecture
-description: Design backends that survive redeploys, server reboots, and modest scaling - stateless app servers, durable state in the right places (object storage for files, managed DB for rows, Redis for sessions), immutable deploy artifacts, health checks and graceful shutdown, database migrations that do not lock the world, background jobs without setTimeout, idempotent operations, and the twelve-factor baseline. Use when designing a new backend, when "user uploads disappear after we redeployed", when a single server crash causes data loss, when moving from a single VPS to multiple instances, when planning a major refactor, or when handing over a vibe-coded prototype to a team that will run it.
+description: Design backends that survive redeploys, server reboots, and modest scaling. Covers stateless application servers, state placement (object storage, managed databases, Redis), immutable deploy artifacts, health checks, graceful shutdown, database migrations that don't lock the world, and the twelve-factor baseline. Invoke when designing a new backend, when uploads disappear after a redeploy, or when productionizing a vibe-coded prototype.
 ---
 
 # Backend Architecture — the Solutions Architect Baseline

@@ -1,6 +1,6 @@
 ---
 name: stripe-webhook-security
-description: Verify and process Stripe webhooks safely - signature verification (in raw body form), idempotency keys, replay protection, event-type allowlists, error-handling without leakage, and the double-charge and dual-currency traps. Use when wiring Stripe webhooks for the first time, when adding a new event type to existing handlers, after a payments incident, or when migrating from test-mode to live-mode.
+description: Verify and process Stripe webhooks safely against the real-world failure modes. Covers signature verification against the raw body, idempotency keys, replay protection, event-type allowlists, the partial-refund and dual-currency traps, and re-fetching authoritative state from Stripe for real-money actions. Invoke when wiring webhooks for the first time, when adding a new event type, or after a payments incident.
 ---
 
 # Stripe Webhook Security

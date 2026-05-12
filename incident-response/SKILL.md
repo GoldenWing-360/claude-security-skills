@@ -1,6 +1,6 @@
 ---
 name: incident-response
-description: Step-by-step runbook for handling a suspected web/server compromise - detect, isolate, preserve evidence, eradicate, recover, and write the post-mortem. Use when a site is defaced, when malware/webshell signatures appear, when admin accounts are created without consent, when traffic spikes from unknown ASNs, or when a hosting provider notifies you of abuse.
+description: Run a structured response to a suspected web or server compromise. Follows SANS PICERL — Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned — and includes a post-mortem template. Invoke when a site is defaced, when malware or webshells appear, when admin accounts arrive unannounced, or when a provider sends an abuse notice.
 ---
 
 # Incident Response

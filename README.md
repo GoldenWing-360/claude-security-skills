@@ -7,10 +7,14 @@ Defensive security skills for [Claude Code](https://claude.com/claude-code). Eac
 
 Coverage: WordPress, VPS / Cloudflare / Next.js / API hardening, Kubernetes, distributed-system audit, agent / client / message-bus security, backend architecture, AI agent guardrails and MCP security, prompt injection defense, OWASP LLM Top 10, file upload safety, codebase audit methodology, incident response, backups, GDPR / DACH compliance — 34 skills total.
 
+*Independent open-source project. Not affiliated with Anthropic PBC. "Claude Code" is referenced as the primary target runtime; the skills are plain Markdown and work elsewhere.*
+
 ## Table of contents
 
 - [Who this is for](#who-this-is-for)
 - [Quick start](#quick-start)
+- [Skill anatomy](#skill-anatomy)
+- [Compatibility](#compatibility)
 - [Repository structure](#repository-structure)
 - [Skills by category](#skills-by-category)
   - [AI & LLM security](#-ai--llm-security-the-2026-attack-surface)
@@ -50,6 +54,39 @@ Use any skill in three ways:
 1. **As a Claude Code skill** — Claude auto-triggers the right one based on the conversation. The YAML `description` field is matched against your request.
 2. **As a runbook for yourself** — open `<skill-name>/SKILL.md` and follow the steps.
 3. **As a checklist for review** — paste the skill into a PR or audit doc and walk through it.
+
+## Skill anatomy
+
+Every `SKILL.md` follows a consistent structure that doubles as a discovery contract and a self-contained runbook:
+
+```markdown
+---
+name: <kebab-case-slug>
+description: <three-sentence summary — what / covers / invoke when>
+---
+
+# <Skill title>
+
+<one-paragraph framing>
+
+## When to invoke
+- <concrete situation>
+
+## <Body — adaptive per skill>
+detection · steps · patterns · common gotchas
+
+## Quick checklist
+- [ ] ...
+
+## What this skill will not do
+- <explicit non-goals — defensive-only stance>
+```
+
+A companion [`index.json`](./index.json) at the repo root indexes every skill's slug, name, description, and domain for programmatic use (skill discovery, agent loading, search UIs).
+
+## Compatibility
+
+Skills use plain Markdown with YAML frontmatter (`name`, `description`). Tested target is **Claude Code**; the same files work with any LLM coding agent that supports the convention — including Cursor, GitHub Copilot, Codex CLI, Cline, Continue.dev, and Gemini CLI. Nothing in the body is platform-specific.
 
 ## Repository structure
 
@@ -102,8 +139,10 @@ claude-security-skills/
 ├── vps-hardening/SKILL.md
 ├── wordpress-hardening/SKILL.md
 │
+├── CITATION.cff
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
+├── index.json
 ├── LICENSE
 ├── README.md
 └── SECURITY.md
@@ -248,9 +287,7 @@ The class of risks that classical security tooling does not yet handle well — 
 
 ## Using with Claude Code
 
-Each `SKILL.md` has YAML frontmatter (`name`, `description`) that Claude Code matches against your request. Drop the directory in a path Claude Code scans for skills, or reference the skills directly. Claude will pick up the right one when a conversation matches its description.
-
-If you prefer to work without auto-triggering, just `cat` the relevant `SKILL.md` and follow it manually.
+Drop the directory in a path Claude Code scans for skills, or reference the skills directly. Claude matches the YAML `description` against your request and loads the matching `SKILL.md`. If you prefer to work without auto-triggering, just `cat` the relevant `SKILL.md` and follow it manually.
 
 ## Contributing
 
