@@ -25,7 +25,7 @@ Coverage: WordPress, VPS / Cloudflare / Next.js / API hardening, Kubernetes, dis
   - [Detection & monitoring](#-detection--monitoring)
   - [Incident response](#-incident-response--secret-hygiene)
   - [Mobile security](#-mobile-security)
-- [Common scenarios — find the right skill fast](#common-scenarios--find-the-right-skill-fast)
+- [Find the right skill](#find-the-right-skill)
 - [Using with Claude Code](#using-with-claude-code)
 - [Contributing](#contributing)
 - [License](#license)
@@ -215,93 +215,36 @@ The class of risks that classical security tooling does not yet handle well — 
 |---|---|
 | [`ios-security`](./ios-security/SKILL.md) | Shipping a native iOS / macOS app that holds credentials or sensitive data, before App Store submission, after a mobile advisory. Covers Keychain, App Transport Security, certificate pinning tradeoffs, jailbreak detection limits, biometric auth, OTA update integrity. |
 
-## Common scenarios — find the right skill fast
+## Find the right skill
 
-These are written as the questions people actually type into a search bar.
-
-### "Help, my WordPress site got hacked"
-→ Start with [`incident-response`](./incident-response/SKILL.md) for the runbook, then [`wordpress-hardening`](./wordpress-hardening/SKILL.md) for WordPress-specific detection (webshells, malicious mu-plugins, injected admins). If multiple sites are on the same shared host, assume lateral movement and audit every sub.
-
-### "How do I detect a webshell on WordPress?"
-→ [`wordpress-hardening`](./wordpress-hardening/SKILL.md) — includes detection commands for the Sid Gifari, WSO, FilesMan, b374k, and c99 webshell families, plus file-system and database indicators.
-
-### "I committed a `.env` to a public repo, what now?"
-→ [`secret-hygiene`](./secret-hygiene/SKILL.md) — covers rotation order (rotate first, purge second), `git-filter-repo` to scrub history, and prevention via pre-commit scanning.
-
-### "How do I prevent prompt injection in my LLM app?"
-→ [`prompt-injection-defense`](./prompt-injection-defense/SKILL.md) — source-of-trust tagging, tool-use confirmation after untrusted input, exfiltration prevention.
-
-### "What are the common security mistakes LLM coding agents make?"
-→ [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) — antipattern catalog. Detection for reviewers, mitigations for agent designers.
-
-### "How do I review LLM-generated code for security issues?"
-→ [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) — recurring failure modes (slopsquatting, hallucinated APIs, bypassed safety guards, silent error swallowing) with what to look for in the diff.
-
-### "How do I safely give an AI agent write access to production?"
-→ [`ai-agent-guardrails`](./ai-agent-guardrails/SKILL.md) — blast-radius classification, dry-run-first, out-of-band approval gates, kill switches. Pairs with [`mcp-security`](./mcp-security/SKILL.md) for the MCP-server side.
-
-### "How do I harden a new Ubuntu VPS in 30 minutes?"
-→ [`vps-hardening`](./vps-hardening/SKILL.md) — step-by-step from "I just SSH'd in as root" to "SSH is key-only, UFW is up, fail2ban running, unattended-upgrades on".
-
-### "Why do user-uploaded images disappear when we redeploy?"
-→ [`backend-architecture`](./backend-architecture/SKILL.md) — the classic ephemeral-disk trap. Solution: object storage (S3 / R2) + CDN, not the app server's local filesystem.
-
-### "How do I architect a backend that scales from one server to two?"
-→ [`backend-architecture`](./backend-architecture/SKILL.md) — stateless app servers, state-placement decision matrix, sessions in Redis, background jobs in a real queue, graceful shutdown.
-
-### "How do I deploy without downtime?"
-→ [`backend-architecture`](./backend-architecture/SKILL.md) — immutable artifacts, `/healthz` + `/readyz` endpoints, SIGTERM drain. Plus database migrations that don't lock the world.
-
-### "How do I audit a codebase I just inherited?"
-→ [`codebase-audit`](./codebase-audit/SKILL.md) — the methodology: scope discipline, 30-minute Day-0 triage, tool recipes (semgrep / CodeQL / gitleaks / trivy), OWASP Top 10 grep patterns, auth-surface walkthrough, writing a report that drives action. Cross-links into every other skill as the deep-dive material per finding.
-
-### "How do I audit a distributed system / agent platform?"
-→ [`distributed-system-audit`](./distributed-system-audit/SKILL.md) — different from code audit: map architecture and trust boundaries first, then per-channel protocol audit (replay / ordering / forgery), failure-mode walk, forensic accountability. Pair with [`codebase-audit`](./codebase-audit/SKILL.md) for the per-component code work.
-
-### "How do I secure a fleet of native agents on customer machines?"
-→ [`agent-client-security`](./agent-client-security/SKILL.md) — installer signing, OTA update channel with rollback, mTLS with per-agent identity, local secret storage (Keychain / DPAPI), anti-tampering signals, telemetry hygiene.
-
-### "How do I lock down NATS / RabbitMQ / Kafka for multi-tenant use?"
-→ [`message-bus-security`](./message-bus-security/SKILL.md) — account / vhost / topic-prefix tenancy, deny-default subject permissions, mTLS / NKEYs, replay protection + consumer idempotency, cross-cluster trust.
-
-### "How do I harden a Kubernetes cluster?"
-→ [`kubernetes-security`](./kubernetes-security/SKILL.md) — Pod Security Standards, RBAC, NetworkPolicy default-deny, secrets without env vars, admission controllers, common findings on inherited clusters.
-
-### "We have backups but nobody has ever restored them"
-→ [`backup-disaster-recovery`](./backup-disaster-recovery/SKILL.md) — RPO/RTO definition, 3-2-1 rule, encryption before leaving the host, ransomware-resistant immutable storage, quarterly restore drills, the things-that-aren't-the-database checklist.
-
-### "How do I prevent BOLA / broken access control in my API?"
-→ [`api-security`](./api-security/SKILL.md) — the #1 API vulnerability and not even close. Plus mass assignment, excessive data exposure, SSRF, GraphQL depth/complexity limits, the OWASP API Top 10 walked end-to-end.
-
-### "How do I accept user file uploads safely?"
-→ [`file-upload-security`](./file-upload-security/SKILL.md) — magic-byte validation (not MIME header), image re-encoding to defang polyglots, EXIF stripping, virus scanning for documents, serving from a separate origin with `Content-Disposition`, signed URLs, presigned-PUT for large files.
-
-### "My Cloudflare site got attacked, how do I lock it down?"
-→ [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) — WAF rules, Bot Fight, Rate Limiting, Authenticated Origin Pulls so attackers cannot bypass the proxy by hitting your origin IP directly.
-
-### "How do I hide my origin IP behind Cloudflare?"
-→ [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) — common leak vectors (MX, leftover A records, SPF IP literals) plus origin-IP rotation and Cloudflare-IPs-only firewall rule.
-
-### "How do I secure a Stripe webhook?"
-→ [`stripe-webhook-security`](./stripe-webhook-security/SKILL.md) — signature verification, idempotency, replay protection, the double-charge traps.
-
-### "What's the OWASP LLM Top 10 and how do I implement it?"
-→ [`llm-app-security`](./llm-app-security/SKILL.md) — each item mapped to a practical control.
-
-### "How do I scope a GitHub PAT / move from long-lived cloud secrets to OIDC?"
-→ [`github-actions-security`](./github-actions-security/SKILL.md) — SHA-pinned actions, scoped `GITHUB_TOKEN`, OIDC for AWS / GCP / Cloudflare.
-
-### "Do I really need a German Impressum and what's a TOM?"
-→ [`dach-compliance`](./dach-compliance/SKILL.md) — Impressum content per TMG/MStV/ECG, AVV, technical-organizational measures, cookie consent that matches German + Austrian + Swiss law.
-
-### "How do I block brute force on `/wp-login.php`?"
-→ Combine [`wordpress-hardening`](./wordpress-hardening/SKILL.md) (mu-plugin defense), [`vps-hardening`](./vps-hardening/SKILL.md) (fail2ban with a `wp-login` jail), and [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) (Rate Limiting + Zero Trust Access in front of `/wp-admin`).
-
-### "How do I write a post-mortem after a breach?"
-→ [`incident-response`](./incident-response/SKILL.md) — includes a post-mortem template (timeline, impact, root cause, contributing factors, action items, IOCs).
-
-### "How do I configure SPF / DKIM / DMARC properly?"
-→ [`email-deliverability-security`](./email-deliverability-security/SKILL.md) — and the `p=none` → `p=quarantine` → `p=reject` migration path that doesn't break legitimate mail.
+| Scenario | Where to start |
+|---|---|
+| Site hacked / webshell found | [`incident-response`](./incident-response/SKILL.md) → [`wordpress-hardening`](./wordpress-hardening/SKILL.md) |
+| Detect a webshell on WordPress | [`wordpress-hardening`](./wordpress-hardening/SKILL.md) |
+| Committed a `.env` to a public repo | [`secret-hygiene`](./secret-hygiene/SKILL.md) |
+| Preventing prompt injection in an LLM app | [`prompt-injection-defense`](./prompt-injection-defense/SKILL.md) |
+| Reviewing LLM-generated code | [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) |
+| Giving an AI agent write access to production | [`ai-agent-guardrails`](./ai-agent-guardrails/SKILL.md) |
+| Hardening a new Ubuntu VPS | [`vps-hardening`](./vps-hardening/SKILL.md) |
+| Hardening a Kubernetes cluster | [`kubernetes-security`](./kubernetes-security/SKILL.md) |
+| User uploads disappear on redeploy | [`backend-architecture`](./backend-architecture/SKILL.md) |
+| Architecting a backend that scales | [`backend-architecture`](./backend-architecture/SKILL.md) |
+| Zero-downtime deploys | [`backend-architecture`](./backend-architecture/SKILL.md) |
+| Inherited a codebase, where to start | [`codebase-audit`](./codebase-audit/SKILL.md) |
+| Auditing a distributed / agent system | [`distributed-system-audit`](./distributed-system-audit/SKILL.md) |
+| Fleet of native agents on customer machines | [`agent-client-security`](./agent-client-security/SKILL.md) |
+| Multi-tenant NATS / RabbitMQ / Kafka | [`message-bus-security`](./message-bus-security/SKILL.md) |
+| Backups exist but have never been restored | [`backup-disaster-recovery`](./backup-disaster-recovery/SKILL.md) |
+| Broken access control / BOLA in an API | [`api-security`](./api-security/SKILL.md) |
+| Accepting user file uploads safely | [`file-upload-security`](./file-upload-security/SKILL.md) |
+| Cloudflare WAF / origin-IP protection | [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) |
+| Securing a Stripe webhook | [`stripe-webhook-security`](./stripe-webhook-security/SKILL.md) |
+| Implementing OWASP LLM Top 10 | [`llm-app-security`](./llm-app-security/SKILL.md) |
+| GitHub Actions OIDC + scoped tokens | [`github-actions-security`](./github-actions-security/SKILL.md) |
+| DACH Impressum / Datenschutz / AGB | [`dach-compliance`](./dach-compliance/SKILL.md) |
+| Blocking brute force on `/wp-login.php` | [`wordpress-hardening`](./wordpress-hardening/SKILL.md) + [`vps-hardening`](./vps-hardening/SKILL.md) + [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) |
+| Writing a post-mortem after a breach | [`incident-response`](./incident-response/SKILL.md) |
+| Configuring SPF / DKIM / DMARC | [`email-deliverability-security`](./email-deliverability-security/SKILL.md) |
 
 ## Using with Claude Code
 
