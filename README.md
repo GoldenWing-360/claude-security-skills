@@ -102,6 +102,14 @@ detection · steps · patterns · common gotchas
 
 A companion [`index.json`](./index.json) at the repo root indexes every skill's slug, name, description, and domain for programmatic use (skill discovery, agent loading, search UIs).
 
+## Documentation
+
+Reference material that complements the skills:
+
+- 📝 **[Prompt Library](./docs/PROMPTS.md)** — ready-to-use prompts that reliably trigger each of the 34 skills
+- 📖 **[Security Glossary](./docs/GLOSSARY.md)** — definitions of terms used across the skills (BOLA, mTLS, RPO/RTO, slopsquatting, ...)
+- ❓ **[FAQ](./docs/FAQ.md)** — installation, compatibility, contribution flow, commercial use
+
 ## Compatibility
 
 Skills use plain Markdown with YAML frontmatter (`name`, `description`). Tested target is **Claude Code**; the same files work with any LLM coding agent that supports the convention — including Cursor, GitHub Copilot, Codex CLI, Cline, Continue.dev, and Gemini CLI. Nothing in the body is platform-specific.
@@ -156,6 +164,12 @@ claude-security-skills/
 ├── stripe-webhook-security/SKILL.md
 ├── vps-hardening/SKILL.md
 ├── wordpress-hardening/SKILL.md
+│
+├── docs/
+│   ├── README.md
+│   ├── PROMPTS.md
+│   ├── GLOSSARY.md
+│   └── FAQ.md
 │
 ├── CITATION.cff
 ├── CODE_OF_CONDUCT.md
