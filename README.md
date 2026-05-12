@@ -2,43 +2,57 @@
   <img src="./assets/banner.png" alt="Claude Code Security Skills" width="100%">
 </p>
 
+<div align="center">
+
 # Claude Code Security Skills
 
-Defensive security skills for [Claude Code](https://claude.com/claude-code). Each skill is a single Markdown file with YAML frontmatter — Claude Code can auto-trigger them, and they read equally well as plain runbooks for humans.
+### Defensive security playbooks for LLM coding agents and the developers using them
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-555.svg)](https://claude.com/claude-code)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![Skills](https://img.shields.io/badge/skills-34-brightgreen.svg?style=flat-square)](#skills-by-category)
+[![Domains](https://img.shields.io/badge/domains-13-9cf.svg?style=flat-square)](#whats-inside--13-security-domains)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-555.svg?style=flat-square)](https://claude.com/claude-code)
+[![Stars](https://img.shields.io/github/stars/GoldenWing-360/claude-security-skills?style=flat-square)](https://github.com/GoldenWing-360/claude-security-skills/stargazers)
+[![Forks](https://img.shields.io/github/forks/GoldenWing-360/claude-security-skills?style=flat-square)](https://github.com/GoldenWing-360/claude-security-skills/network/members)
+[![Last commit](https://img.shields.io/github/last-commit/GoldenWing-360/claude-security-skills?style=flat-square)](https://github.com/GoldenWing-360/claude-security-skills/commits/main)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
-Coverage: WordPress, VPS / Cloudflare / Next.js / API hardening, Kubernetes, distributed-system audit, agent / client / message-bus security, backend architecture, AI agent guardrails and MCP security, prompt injection defense, OWASP LLM Top 10, file upload safety, codebase audit methodology, incident response, backups, GDPR / DACH compliance — 34 skills total.
+**34 production-tested skills · 13 security domains · defensive-only · MIT-licensed**
 
-*Independent open-source project. Not affiliated with Anthropic PBC. "Claude Code" is referenced as the primary target runtime; the skills are plain Markdown and work elsewhere.*
+[Get started](#quick-start) · [What's inside](#whats-inside--13-security-domains) · [Find a skill](#find-the-right-skill) · [Contributing](./CONTRIBUTING.md)
 
-## Table of contents
+</div>
 
-- [Who this is for](#who-this-is-for)
-- [Quick start](#quick-start)
-- [Skill anatomy](#skill-anatomy)
-- [Compatibility](#compatibility)
-- [Repository structure](#repository-structure)
-- [Skills by category](#skills-by-category)
-  - [AI & LLM security](#-ai--llm-security-the-2026-attack-surface)
-  - [Web application security](#-web-application-security)
-  - [Server & infrastructure](#-server--infrastructure)
-  - [Distributed systems](#-distributed-systems)
-  - [Architecture & reliability](#-architecture--reliability)
-  - [Audit & review](#-audit--review)
-  - [Identity & access](#-identity--access)
-  - [Supply chain & CI/CD](#-supply-chain--cicd)
-  - [Compliance (EU / DACH)](#-compliance-eu--dach)
-  - [Detection & monitoring](#-detection--monitoring)
-  - [Incident response](#-incident-response--secret-hygiene)
-  - [Mobile security](#-mobile-security)
-- [Find the right skill](#find-the-right-skill)
-- [Using with Claude Code](#using-with-claude-code)
-- [Contributing](#contributing)
-- [License](#license)
+---
+
+> ⚠️ **Independent project** — Not affiliated with Anthropic PBC. The skills are plain Markdown with YAML frontmatter and work with any LLM coding agent that supports the same convention.
+
+## Give any LLM coding agent the instincts of a senior engineer
+
+A senior engineer knows when a `--no-verify` flag is hiding a real bug, when an empty `catch {}` is silently swallowing an auth check, what to do when a customer's WordPress site starts redirecting to a casino, and how to harden a fresh VPS in thirty minutes. **Your AI coding agent doesn't — unless you give it these skills.**
+
+This repo contains **34 production-tested defensive security skills**, each a self-contained Markdown file with YAML frontmatter so Claude Code (or any compatible agent) can auto-trigger the right one. Every skill comes from real incident-response, hardening, and audit work — generalized so the patterns travel beyond the original engagement. Clone it, point your agent at it, and your next deploy, audit, or 3am alert gets expert-level guidance in seconds.
+
+## What's inside — 13 security domains
+
+| Domain | Skills | What it covers |
+|---|---|---|
+| 🤖 AI & LLM security | 5 | MCP security · agent guardrails · prompt injection defense · OWASP LLM Top 10 · coding-agent failure modes |
+| 🌐 Web application | 6 | WordPress · Next.js · Payload CMS · API (OWASP API Top 10) · Stripe webhooks · file upload safety |
+| 🏗️ Server & infrastructure | 5 | VPS · Cloudflare · Postgres · Docker · Kubernetes |
+| 🛰 Distributed systems | 3 | Distributed-system audit · native-agent / client security · message bus (NATS / RabbitMQ / Kafka) |
+| 🎯 Architecture & reliability | 2 | Backend architecture (twelve-factor, stateless deploys) · backups & disaster recovery |
+| 🔎 Audit & review | 2 | Codebase audit methodology · site / server audit checklist |
+| 🔐 Identity & access | 2 | Auth hardening (NIST 800-63B, MFA tiers) · secret hygiene & rotation |
+| 📦 Supply chain & CI/CD | 2 | npm / pnpm / typosquat defense · GitHub Actions (OIDC, SHA pinning) |
+| 📋 Compliance (EU / DACH) | 2 | GDPR technical controls · DACH Impressum / Datenschutz / AGB |
+| 🔍 Detection & monitoring | 2 | Log strategy (operational / access / audit) · honeypots & tarpits |
+| 🛡️ Incident response | 1 | SANS PICERL runbook with post-mortem template |
+| 📨 Email security | 1 | SPF / DKIM / DMARC (with the p=none → p=reject migration path) |
+| 📱 Mobile security | 1 | iOS / macOS — Keychain, ATS, certificate pinning, jailbreak signal |
 
 ## Who this is for
+
 
 - **Developers shipping with LLM assistance ("vibe coders")** who need a security checklist that actually fits how they work — agent loops, MCP servers, fast iterations, small teams
 - **Solo operators and small agencies** running 5–50 WordPress sites, a few VPS servers, and Cloudflare — without a dedicated security team
@@ -158,105 +172,106 @@ Every skill is a self-contained `SKILL.md` with YAML frontmatter (`name`, `descr
 
 ## Skills by category
 
-### 🤖 AI & LLM security (the 2026 attack surface)
+Each link goes to the full `SKILL.md` with detection commands, step-by-step procedures, and checklists.
 
-The class of risks that classical security tooling does not yet handle well — and the area most teams shipping with LLM assistance get wrong.
+### 🤖 AI & LLM security
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`mcp-security`](./mcp-security/SKILL.md) | Adding a new MCP server, before granting one write access to production, after a malicious-MCP advisory, periodic MCP audit. Covers inventory, risk-tiering (🟢 read-only → ⚫ spends-money), secret-in-config detection, tool-poisoning indicators, lifecycle. |
-| [`ai-agent-guardrails`](./ai-agent-guardrails/SKILL.md) | Designing an autonomous agent, granting an LLM write access to production, after an agent makes an unexpected change. Covers blast-radius classification, dry-run-first, out-of-band approval gates, scope locking, idempotency, kill switches, rollback. |
-| [`prompt-injection-defense`](./prompt-injection-defense/SKILL.md) | Building any app where untrusted text reaches an LLM (chat, RAG, summarize-this-URL), or where the LLM has tools that act on real systems. Covers source-of-trust tagging, tool-use confirmation after untrusted input, output validation, markdown-image exfiltration prevention. |
-| [`llm-app-security`](./llm-app-security/SKILL.md) | Shipping an LLM feature to production, handling an abuse complaint, after a model-provider advisory. Walks the OWASP LLM Top 10, covers rate limits, cost caps, PII scrubbing, audit logging, model-version pinning, AI-incident playbook. |
-| [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) | Reviewing LLM-written code, designing a coding agent's guardrails, onboarding a team to "vibe coding", investigating an LLM-driven incident. The antipattern catalog: bulk-ops without review, safety-guard bypass as friction, indirect injection acted on, secrets in logs, slopsquat-bait packages, outdated training patterns, sycophancy on insecure proposals, and more. |
+| [`mcp-security`](./mcp-security/SKILL.md) | Audit MCP configurations, risk-tier capabilities, detect malicious servers, apply least-privilege scoping. |
+| [`ai-agent-guardrails`](./ai-agent-guardrails/SKILL.md) | Blast-radius classification, dry-run-first, out-of-band approval gates, kill switches. |
+| [`prompt-injection-defense`](./prompt-injection-defense/SKILL.md) | Source-of-trust tagging, tool-use confirmation after untrusted input, exfiltration prevention. |
+| [`llm-app-security`](./llm-app-security/SKILL.md) | OWASP LLM Top 10 mapped to practical controls — rate limits, cost caps, PII scrubbing, audit logging. |
+| [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) | Antipattern catalog for LLM coding agents — bulk ops, bypassed guards, slopsquatting, sycophancy. |
 
-### 🌐 Web application security
+### 🌐 Web application
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`wordpress-hardening`](./wordpress-hardening/SKILL.md) | A WordPress site shows unexpected files, suspicious admin accounts, defaced pages, or hardening a fresh install. Covers Sid Gifari / WSO / FilesMan webshell detection, mu-plugin defense pack, shared-hosting pivot defense, integrity monitoring. |
-| [`nextjs-security`](./nextjs-security/SKILL.md) | Reviewing a Next.js app before launch, after a major version upgrade (13 → 14 → 15 → 16), or when adding Server Actions. Covers middleware-bypass class, `NEXT_PUBLIC_` env leakage, RSC over-fetch, CSP, open redirects, `next/image` SSRF. |
-| [`api-security`](./api-security/SKILL.md) | Designing a new REST/GraphQL API, reviewing one before scaling, after abuse (scraping, account takeover via API). Walks the OWASP API Top 10: BOLA, broken auth, mass assignment, excessive data exposure, resource consumption, broken function-level auth, SSRF, misconfig, inventory, unsafe third-party consumption. |
-| [`payload-cms-security`](./payload-cms-security/SKILL.md) | Shipping Payload CMS to production, opening admin to non-developers, after a Payload version upgrade. Covers collection/field-level access control, hook safety, file uploads, GraphQL/REST surface, multi-tenant isolation. |
-| [`file-upload-security`](./file-upload-security/SKILL.md) | Adding upload to a new endpoint, after an upload-caused incident, migrating from local-disk to object storage, reviewing an inherited upload feature. Covers magic-byte validation, image re-encoding to defang polyglots, EXIF stripping, virus scanning, path-safe storage keys, separate-origin serving with `Content-Disposition`, signed URLs, presigned-PUT for large files. |
-| [`site-server-audit`](./site-server-audit/SKILL.md) | Onboarding a new client site, before launch, after infra changes, periodic re-audit. Read-only checklist: DNS, TLS/HSTS, security headers, exposed paths (`.git`, `.env`, backups), cookies, software fingerprint. |
+| [`wordpress-hardening`](./wordpress-hardening/SKILL.md) | Detect WordPress webshells and harden against re-compromise on shared hosting. |
+| [`nextjs-security`](./nextjs-security/SKILL.md) | Next.js-specific issues — middleware bypass, RSC over-fetch, `NEXT_PUBLIC_` traps, CSP, `next/image` SSRF. |
+| [`payload-cms-security`](./payload-cms-security/SKILL.md) | Access control, file uploads, GraphQL surface, and multi-tenant isolation in Payload CMS. |
+| [`api-security`](./api-security/SKILL.md) | OWASP API Top 10 — BOLA, mass assignment, excessive data exposure, GraphQL depth limits. |
+| [`file-upload-security`](./file-upload-security/SKILL.md) | Accept uploads safely — magic-byte validation, polyglot defense, separate-origin serving with `Content-Disposition`. |
+| [`stripe-webhook-security`](./stripe-webhook-security/SKILL.md) | Raw-body signature verification, idempotency, replay protection, currency-mismatch traps. |
+| [`site-server-audit`](./site-server-audit/SKILL.md) | Non-intrusive checklist for DNS, TLS, security headers, exposed paths, and cookies. |
 
 ### 🏗️ Server & infrastructure
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`vps-hardening`](./vps-hardening/SKILL.md) | Provisioning a new Debian/Ubuntu VPS, inheriting an existing one, before exposing a service to the public internet. 30-minute baseline: SSH key-only, UFW, fail2ban, unattended-upgrades, kernel sysctls, journalctl. Includes monthly audit script. |
-| [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) | Onboarding a domain to Cloudflare, when origin IP may be exposed, after an attack. Covers account hardening, Authenticated Origin Pulls, WAF Managed Rules, Bot Fight, Rate Limiting, Transform Rules for headers, Zero Trust Access for admin paths, R2 / Pages security. |
-| [`postgres-hardening`](./postgres-hardening/SKILL.md) | Provisioning a new PostgreSQL deployment, before opening it to a new app, after an advisory, or reviewing a multi-tenant schema. Covers `pg_hba.conf`, role separation, row-level security, backup encryption, pg_audit, version upgrades. |
-| [`docker-container-security`](./docker-container-security/SKILL.md) | Adding Docker to a VPS with UFW (and hitting the bypass surprise), writing a new Dockerfile, pushing to a public registry, periodic audit. Covers non-root users, read-only FS, dropped capabilities, secret mounts, trivy scanning, distroless bases. |
-| [`kubernetes-security`](./kubernetes-security/SKILL.md) | Provisioning a new cluster, inheriting one, before opening a cluster to a new tenant, after a K8s CVE. Covers Pod Security Standards (Restricted / Baseline / Privileged), RBAC with least privilege, NetworkPolicy default-deny, secrets without env vars (SealedSecrets / External Secrets / SOPS), admission controllers (Kyverno / OPA), image scanning, audit logging, common findings on inherited clusters. |
+| [`vps-hardening`](./vps-hardening/SKILL.md) | 30-minute Debian / Ubuntu baseline — SSH key-only, UFW, fail2ban, unattended-upgrades. |
+| [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) | Origin-IP protection, WAF, Rate Limiting, Zero Trust Access, Transform Rules for headers. |
+| [`postgres-hardening`](./postgres-hardening/SKILL.md) | `pg_hba`, role separation, row-level security, TLS, encrypted backups, `pg_audit`. |
+| [`docker-container-security`](./docker-container-security/SKILL.md) | Non-root users, read-only filesystems, dropped capabilities, image scanning, the UFW-bypass trap. |
+| [`kubernetes-security`](./kubernetes-security/SKILL.md) | Pod Security Standards, RBAC least-privilege, NetworkPolicy default-deny, admission controllers. |
 
 ### 🛰 Distributed systems
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`distributed-system-audit`](./distributed-system-audit/SKILL.md) | Auditing a client/server product, microservices, IoT or fleet-management backend, multi-tenant SaaS with workers, acquisition due-diligence on a distributed product. Map first, judge later: per-component trust analysis, protocol audit (replay / ordering / forgery), threat-modeling-lite, failure-mode audit, forensic accountability, multi-tenant isolation. |
-| [`agent-client-security`](./agent-client-security/SKILL.md) | Shipping a native agent / endpoint client (monitoring, RMM, deployment, CI runner, IoT controller), designing the installer / updater, auditing one before adoption. Covers installer integrity and code signing per platform, OTA update channel with rollback and kill-switch, mTLS with per-agent identity, local secret storage (Keychain / DPAPI / libsecret), anti-tampering signals, telemetry hygiene. |
-| [`message-bus-security`](./message-bus-security/SKILL.md) | Introducing NATS / RabbitMQ / Kafka / MQTT to an architecture, adding multi-tenancy to an existing bus, after cross-tenant message leakage, auditing a system that uses a bus. Covers account / vhost / topic-prefix tenancy, deny-default permissions, mTLS / NKEYs / SASL auth, replay protection + idempotency at consumer, encryption in-transit and at-rest, cross-cluster trust. |
+| [`distributed-system-audit`](./distributed-system-audit/SKILL.md) | Map first, judge later — trust boundaries, protocol audit (replay / ordering / forgery), failure-mode walk. |
+| [`agent-client-security`](./agent-client-security/SKILL.md) | Native agents on customer machines — installer signing, OTA with rollback, mTLS, anti-tampering signals. |
+| [`message-bus-security`](./message-bus-security/SKILL.md) | NATS / RabbitMQ / Kafka — tenant isolation, deny-default permissions, replay protection, consumer idempotency. |
 
 ### 🎯 Architecture & reliability
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`backend-architecture`](./backend-architecture/SKILL.md) | "User uploads disappear after redeploy", scaling from one server to two, moving from prototype to production, handing off to a team that has to run it. The Solutions-Architect baseline: stateless apps + state in the right places (object storage / managed DB / Redis), immutable artifacts, health checks, graceful shutdown, migrations that don't lock the world, background jobs without `setTimeout`, twelve-factor patterns. |
-| [`backup-disaster-recovery`](./backup-disaster-recovery/SKILL.md) | "We have backups but nobody has ever restored them", new system holding production data, after a near-miss, before a major migration. Covers RPO/RTO, the 3-2-1 rule, encryption before leaving the host, ransomware-resistant immutable storage, restore drills (a backup you have not restored is a wish), the things-that-aren't-the-database backup list, retention split (operational vs legal). |
+| [`backend-architecture`](./backend-architecture/SKILL.md) | Stateless apps, state in the right places, twelve-factor — survive redeploys, scaling, server reboots. |
+| [`backup-disaster-recovery`](./backup-disaster-recovery/SKILL.md) | RPO / RTO, 3-2-1, encrypted off-host backups, ransomware-resistant immutable storage, restore drills. |
 
 ### 🔎 Audit & review
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`codebase-audit`](./codebase-audit/SKILL.md) | Inheriting a codebase (new job, client takeover, acquisition), accepting an "audit my app" engagement, reviewing AI-generated code before shipping, periodic re-audit. The methodology: scope discipline, 30-minute Day-0 triage, SAST/SCA tool recipes (semgrep, CodeQL, gitleaks, trivy), OWASP Top 10 mapped to grep patterns, auth-surface walkthrough, dependency-and-infra review, writing the report (severity classes, reproduction, remediation), anti-patterns junior auditors fall into. |
+| [`codebase-audit`](./codebase-audit/SKILL.md) | Methodology for inherited codebases — triage, SAST / SCA recipes, OWASP grep patterns, severity-classed report. |
 
 ### 🔐 Identity & access
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`auth-hardening`](./auth-hardening/SKILL.md) | Building auth from scratch, reviewing an existing system, handling a credential-stuffing wave, planning MFA rollout. Covers NIST 800-63B passphrase policy (no rotation theatre), MFA enforcement, session vs JWT, OAuth scope minimization, account lockout. |
-| [`secret-hygiene`](./secret-hygiene/SKILL.md) | A secret was committed to git, a private repo went public, a contributor leaves, periodic audit. Covers leak detection (gitleaks/trufflehog), rotation order, `git-filter-repo` history purge, pre-commit prevention. |
+| [`auth-hardening`](./auth-hardening/SKILL.md) | NIST 800-63B passphrases, Argon2id, MFA tiers, no-enumeration lockout, password reset done right. |
+| [`secret-hygiene`](./secret-hygiene/SKILL.md) | Find leaked secrets, rotate in the right order, optionally purge git history with `git-filter-repo`. |
 
 ### 📦 Supply chain & CI/CD
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`dependency-supply-chain`](./dependency-supply-chain/SKILL.md) | Adding a new dependency, after a supply-chain incident (npm typosquat, package takeover), periodic audit. Covers lockfile hygiene, npm/pnpm audit and its limits, socket.dev, postinstall script review, package pinning, minimum-permission CI. |
-| [`github-actions-security`](./github-actions-security/SKILL.md) | Adding a workflow, introducing a third-party action, after a workflow leaked a secret, migrating from long-lived cloud keys to OIDC. Covers SHA pinning vs tags, scoped `GITHUB_TOKEN`, OIDC, `pull_request_target` traps, environment protections. |
+| [`dependency-supply-chain`](./dependency-supply-chain/SKILL.md) | Lockfile hygiene, behavior-level scanning, postinstall review, typosquat and slopsquat defense. |
+| [`github-actions-security`](./github-actions-security/SKILL.md) | SHA-pinned actions, scoped `GITHUB_TOKEN`, OIDC in place of long-lived cloud secrets. |
 
 ### 📋 Compliance (EU / DACH)
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`gdpr-technical-controls`](./gdpr-technical-controls/SKILL.md) | Building a product handling EU resident data, responding to a SAR (Subject Access Request), preparing for a Datenschutz audit. Covers data inventory, deletion/portability endpoints, anonymization, log scrubbing, 72h breach notification, DPA implications. |
-| [`dach-compliance`](./dach-compliance/SKILL.md) | Launching a site for Germany / Austria / Switzerland, adding third-party services to a DACH site, reviewing an inherited DACH site. Covers Impressum (TMG/MStV/ECG), Datenschutzerklärung, AGB basics, AVV / DPA, TOMs, consent banners. |
+| [`gdpr-technical-controls`](./gdpr-technical-controls/SKILL.md) | Data inventory, SAR and deletion endpoints, log scrubbing, 72-hour breach notification. |
+| [`dach-compliance`](./dach-compliance/SKILL.md) | Impressum, Datenschutzerklärung, AGB, AVV / DPA, TOMs, cookie consent for Germany / Austria / Switzerland. |
 
 ### 🔍 Detection & monitoring
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`log-strategy`](./log-strategy/SKILL.md) | Starting a new service, investigation revealed missing log fields, log volume becoming expensive. Covers what to log / never log (PII, secrets), structured logging, retention tiers, centralization, alert routing. |
-| [`honeypot-tarpits`](./honeypot-tarpits/SKILL.md) | Public services see constant automated probing, want detection without a SIEM, complementing fail2ban + WAF. Covers fake admin paths, decoy `.env` files, canary tokens, fake API keys in JS bundles, scanner tarpits. |
+| [`log-strategy`](./log-strategy/SKILL.md) | What to log and what never to log — operational vs access vs audit, retention tiers, alert routing. |
+| [`honeypot-tarpits`](./honeypot-tarpits/SKILL.md) | Fake admin paths, canary tokens, decoy `.env` files — high-signal detection without a SIEM. |
 
 ### 🛡️ Incident response
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`incident-response`](./incident-response/SKILL.md) | A site is defaced or redirecting, webshell found, admin appeared without consent, abuse notice from a provider. SANS PICERL-style runbook: Preparation → Identification → Containment → Eradication → Recovery → Lessons Learned. Includes post-mortem template. |
+| [`incident-response`](./incident-response/SKILL.md) | SANS PICERL runbook for small teams, with a post-mortem template. |
 
 ### 📨 Email security
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`email-deliverability-security`](./email-deliverability-security/SKILL.md) | Launching a new sending domain, domains being spoofed, transactional mail in spam, consolidating to a single ESP. Covers SPF, DKIM, DMARC, BIMI, ARC, MTA-STS, TLS-RPT, and the `p=none` → `p=reject` migration. |
+| [`email-deliverability-security`](./email-deliverability-security/SKILL.md) | SPF / DKIM / DMARC with the `p=none → p=quarantine → p=reject` migration path. |
 
 ### 📱 Mobile security
 
-| Skill | Use when |
+| Skill | Summary |
 |---|---|
-| [`ios-security`](./ios-security/SKILL.md) | Shipping a native iOS / macOS app that holds credentials or sensitive data, before App Store submission, after a mobile advisory. Covers Keychain, App Transport Security, certificate pinning tradeoffs, jailbreak detection limits, biometric auth, OTA update integrity. |
+| [`ios-security`](./ios-security/SKILL.md) | Keychain accessibility tiers, ATS, certificate pinning, file protection, jailbreak detection as signal. |
 
 ## Find the right skill
 
