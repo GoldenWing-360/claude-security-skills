@@ -18,10 +18,11 @@
 [![Last commit](https://img.shields.io/github/last-commit/GoldenWing-360/claude-security-skills?style=flat-square)](https://github.com/GoldenWing-360/claude-security-skills/commits/main)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 [![Featured on dev.to](https://img.shields.io/badge/Featured%20on-dev.to-black.svg?style=flat-square&logo=devdotto)](https://dev.to/goldenwing360/10-security-mistakes-claude-code-and-copilot-make-in-production-584l)
+[![Announcement on goldenwing.at](https://img.shields.io/badge/Announcement-goldenwing.at-f2fb31.svg?style=flat-square)](https://goldenwing.at/en/blog/claude-code-security-skills-open-source)
 
 **34 production-tested skills · 13 security domains · defensive-only · MIT-licensed**
 
-[Get started](#quick-start) · [What's inside](#whats-inside--13-security-domains) · [Find a skill](#find-the-right-skill) · [Read on dev.to](https://dev.to/goldenwing360/10-security-mistakes-claude-code-and-copilot-make-in-production-584l) · [Contributing](./CONTRIBUTING.md)
+[Get started](#quick-start) · [What's inside](#whats-inside--13-security-domains) · [Find a skill](#find-the-right-skill) · [Read on dev.to](https://dev.to/goldenwing360/10-security-mistakes-claude-code-and-copilot-make-in-production-584l) · [Read on goldenwing.at](https://goldenwing.at/en/blog/claude-code-security-skills-open-source) · [Contributing](./CONTRIBUTING.md)
 
 </div>
 
