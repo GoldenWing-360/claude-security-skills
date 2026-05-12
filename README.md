@@ -3,11 +3,11 @@
 > Production-tested defensive security skills for [Claude Code](https://claude.com/claude-code) — checklists, playbooks, and hardening guides for WordPress, VPS servers, Cloudflare, Next.js, AI agents, MCP servers, and incident response. Battle-tested on real compromises, generalized for everyone.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/skills-25-blue.svg)](#skills-by-category)
+[![Skills](https://img.shields.io/badge/skills-26-blue.svg)](#skills-by-category)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-purple.svg)](https://claude.com/claude-code)
 [![Made by GoldenWing](https://img.shields.io/badge/made%20by-goldenwing.at-orange.svg)](https://goldenwing.at)
 
-**25 self-contained `SKILL.md` files** covering everything from "how do I detect a webshell on WordPress" to "how do I harden an AI agent that can write to production". Each skill is a single Markdown file with YAML frontmatter — Claude Code auto-triggers them on relevant requests, but they are equally usable as plain runbooks for humans.
+**26 self-contained `SKILL.md` files** covering everything from "how do I detect a webshell on WordPress" to "how do I harden an AI agent that can write to production". Each skill is a single Markdown file with YAML frontmatter — Claude Code auto-triggers them on relevant requests, but they are equally usable as plain runbooks for humans.
 
 ## Table of contents
 
@@ -17,6 +17,7 @@
   - [AI & LLM security](#-ai--llm-security-the-2026-attack-surface)
   - [Web application security](#-web-application-security)
   - [Server & infrastructure](#-server--infrastructure)
+  - [Architecture & reliability](#-architecture--reliability)
   - [Identity & access](#-identity--access)
   - [Supply chain & CI/CD](#-supply-chain--cicd)
   - [Compliance (EU / DACH)](#-compliance-eu--dach)
@@ -80,6 +81,12 @@ The class of risks that classical security tooling does not yet handle well — 
 | [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) | Onboarding a domain to Cloudflare, when origin IP may be exposed, after an attack. Covers account hardening, Authenticated Origin Pulls, WAF Managed Rules, Bot Fight, Rate Limiting, Transform Rules for headers, Zero Trust Access for admin paths, R2 / Pages security. |
 | [`postgres-hardening`](./postgres-hardening/SKILL.md) | Provisioning a new PostgreSQL deployment, before opening it to a new app, after an advisory, or reviewing a multi-tenant schema. Covers `pg_hba.conf`, role separation, row-level security, backup encryption, pg_audit, version upgrades. |
 | [`docker-container-security`](./docker-container-security/SKILL.md) | Adding Docker to a VPS with UFW (and hitting the bypass surprise), writing a new Dockerfile, pushing to a public registry, periodic audit. Covers non-root users, read-only FS, dropped capabilities, secret mounts, trivy scanning, distroless bases. |
+
+### 🎯 Architecture & reliability
+
+| Skill | Use when |
+|---|---|
+| [`backend-architecture`](./backend-architecture/SKILL.md) | "User uploads disappear after redeploy", scaling from one server to two, moving from prototype to production, handing off to a team that has to run it. The Solutions-Architect baseline: stateless apps + state in the right places (object storage / managed DB / Redis), immutable artifacts, health checks, graceful shutdown, migrations that don't lock the world, background jobs without `setTimeout`, twelve-factor patterns. |
 
 ### 🔐 Identity & access
 
@@ -155,6 +162,15 @@ These are written as the questions people actually type into a search bar.
 ### "How do I harden a new Ubuntu VPS in 30 minutes?"
 → [`vps-hardening`](./vps-hardening/SKILL.md) — step-by-step from "I just SSH'd in as root" to "SSH is key-only, UFW is up, fail2ban running, unattended-upgrades on".
 
+### "Why do user-uploaded images disappear when we redeploy?"
+→ [`backend-architecture`](./backend-architecture/SKILL.md) — the classic ephemeral-disk trap. Solution: object storage (S3 / R2) + CDN, not the app server's local filesystem.
+
+### "How do I architect a backend that scales from one server to two?"
+→ [`backend-architecture`](./backend-architecture/SKILL.md) — stateless app servers, state-placement decision matrix, sessions in Redis, background jobs in a real queue, graceful shutdown.
+
+### "How do I deploy without downtime?"
+→ [`backend-architecture`](./backend-architecture/SKILL.md) — immutable artifacts, `/healthz` + `/readyz` endpoints, SIGTERM drain. Plus database migrations that don't lock the world.
+
 ### "My Cloudflare site got attacked, how do I lock it down?"
 → [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) — WAF rules, Bot Fight, Rate Limiting, Authenticated Origin Pulls so attackers cannot bypass the proxy by hitting your origin IP directly.
 
@@ -213,4 +229,4 @@ If a skill saved you time or helped during an incident, a GitHub star helps othe
 
 ---
 
-**Keywords**: Claude Code skills, Claude Code security, defensive security, AI security, LLM security, MCP server security, prompt injection defense, OWASP LLM Top 10, LLM coding antipatterns, vibe coding security, slopsquatting, AI agent guardrails, WordPress security checklist, webshell detection, VPS hardening guide, Cloudflare WAF setup, Next.js security, Stripe webhook security, Postgres hardening, Docker security, secret rotation, git history purge, incident response playbook, GDPR technical controls, DACH Impressum, GitHub Actions OIDC, SPF DKIM DMARC, iOS Keychain.
+**Keywords**: Claude Code skills, Claude Code security, defensive security, AI security, LLM security, MCP server security, prompt injection defense, OWASP LLM Top 10, LLM coding antipatterns, vibe coding security, slopsquatting, AI agent guardrails, WordPress security checklist, webshell detection, VPS hardening guide, Cloudflare WAF setup, Next.js security, Stripe webhook security, Postgres hardening, Docker security, secret rotation, git history purge, incident response playbook, GDPR technical controls, DACH Impressum, GitHub Actions OIDC, SPF DKIM DMARC, iOS Keychain, backend architecture, twelve-factor app, stateless deploys, object storage upload, zero-downtime deployment, solutions architect baseline.
