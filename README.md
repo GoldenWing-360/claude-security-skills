@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.png" alt="Claude Code Security Skills" width="100%">
+</p>
+
 # Claude Code Security Skills
 
 Defensive security skills for [Claude Code](https://claude.com/claude-code). Each skill is a single Markdown file with YAML frontmatter — Claude Code can auto-trigger them, and they read equally well as plain runbooks for humans.
