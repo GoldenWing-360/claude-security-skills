@@ -12,7 +12,7 @@ This repository contains **documentation and Markdown skills** — there is no e
 
 **Do not open a public issue for security-relevant problems.** Instead:
 
-- Email: `security@goldenwing.at`
+- Email: `office@goldenwing.at`
 - Or use GitHub's [private vulnerability reporting](https://github.com/GoldenWing-360/claude-security-skills/security/advisories/new) for this repo
 
 Include:

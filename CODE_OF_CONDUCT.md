@@ -25,7 +25,7 @@ Examples of unacceptable behavior:
 
 ## Enforcement
 
-Behaviors that violate this Code of Conduct may be reported to the maintainers at `conduct@goldenwing.at`. All complaints will be reviewed and investigated promptly and fairly. Maintainers may remove comments, commits, or contributions, and may ban repeat offenders.
+Behaviors that violate this Code of Conduct may be reported to the maintainers at `office@goldenwing.at`. All complaints will be reviewed and investigated promptly and fairly. Maintainers may remove comments, commits, or contributions, and may ban repeat offenders.
 
 ## Attribution
 
