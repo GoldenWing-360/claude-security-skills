@@ -6,12 +6,32 @@ Each skill is a single `SKILL.md` with YAML frontmatter (`name`, `description`) 
 
 ## What's in here
 
+### 🌐 Web & hosting
 | Skill | What it does |
 |---|---|
 | [`wordpress-hardening`](./wordpress-hardening/SKILL.md) | Detect webshells (Sid Gifari / WSO / FilesMan family) and backdoors, then harden WordPress against re-compromise. Tuned for shared-hosting environments where one dirty sub can pivot across the whole account. |
 | [`site-server-audit`](./site-server-audit/SKILL.md) | Read-only, non-intrusive checklist for a public-facing site: DNS, TLS/HSTS, security headers, exposed paths (`.git`, `.env`, backups), cookies, software fingerprint, file-side hygiene. |
+| [`nextjs-security`](./nextjs-security/SKILL.md) | Next.js-specific issues: middleware-bypass class, Server Actions hygiene, `NEXT_PUBLIC_` env leakage, RSC over-fetch, CSP, open redirects, `next/image` SSRF, runtime selection. |
+
+### 🏗️ Infrastructure
+| Skill | What it does |
+|---|---|
+| [`vps-hardening`](./vps-hardening/SKILL.md) | 30-minute baseline for Debian/Ubuntu VPS: SSH key-only, UFW, fail2ban, unattended-upgrades, sysctls, journalctl retention, sudo policy. Includes a monthly audit script. |
+| [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) | Cloudflare account + zone hardening: API token scoping, origin-IP protection, Authenticated Origin Pulls, WAF/Bot/Rate-Limit baselines, Transform Rules for headers, Zero Trust for admin paths, R2 and Pages security. |
+
+### 🛡️ Incident & hygiene
+| Skill | What it does |
+|---|---|
 | [`incident-response`](./incident-response/SKILL.md) | SANS PICERL-style runbook: Preparation → Identification → Containment → Eradication → Recovery → Lessons Learned. Designed for small teams and solo operators who do not have a dedicated IR firm on retainer. |
 | [`secret-hygiene`](./secret-hygiene/SKILL.md) | Find leaked credentials in repos and on disk, rotate in the right order, optionally purge git history with `git-filter-repo`, and prevent recurrence with pre-commit scanning. |
+
+### 🤖 AI-era security
+| Skill | What it does |
+|---|---|
+| [`mcp-security`](./mcp-security/SKILL.md) | Audit and harden Model Context Protocol servers: inventory, risk-tiering (read-only → spend-money), secret-in-config detection, malicious-MCP indicators, least-privilege scoping, lifecycle. |
+| [`ai-agent-guardrails`](./ai-agent-guardrails/SKILL.md) | Safety controls for LLM agents acting on real systems: blast-radius classification, dry-run-first, out-of-band approval gates, scope locking, idempotency, kill switches, rollback. |
+| [`prompt-injection-defense`](./prompt-injection-defense/SKILL.md) | Containment patterns for direct and indirect injection: source-of-trust tagging, tool-use confirmation after untrusted input, output validation, exfiltration prevention (markdown image side-channel), context-window hygiene. |
+| [`llm-app-security`](./llm-app-security/SKILL.md) | Operational controls for LLM-powered features: OWASP-LLM Top-10 mapping, rate limits + cost caps, PII scrubbing, audit logging, response moderation, model version pinning, AI-incident playbook. |
 
 ## Scope and intent
 
