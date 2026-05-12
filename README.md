@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Skills](https://img.shields.io/badge/skills-25-blue.svg)](#skills-by-category)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-purple.svg)](https://claude.com/claude-code)
+[![Made by GoldenWing](https://img.shields.io/badge/made%20by-goldenwing.at-orange.svg)](https://goldenwing.at)
 
 **25 self-contained `SKILL.md` files** covering everything from "how do I detect a webshell on WordPress" to "how do I harden an AI agent that can write to production". Each skill is a single Markdown file with YAML frontmatter — Claude Code auto-triggers them on relevant requests, but they are equally usable as plain runbooks for humans.
 
@@ -204,7 +205,9 @@ Please keep contributions defensive in spirit. No exploitation tradecraft, no re
 
 ## Background
 
-Built and maintained by [GoldenWing-360](https://github.com/GoldenWing-360). The patterns here are distilled from real cleanup, hardening, and incident-response work — particularly across small-business WordPress sites on shared hosting, Cloudflare-fronted VPS infrastructure, and LLM-powered applications. Specific incident details and indicators of compromise have been generalized so the guidance is portable.
+Built and maintained by [**GoldenWing**](https://goldenwing.at) ([GitHub: GoldenWing-360](https://github.com/GoldenWing-360)) — a Vienna-based studio working at the intersection of web engineering, AI integration, and infrastructure security. The patterns here are distilled from real cleanup, hardening, and incident-response work — particularly across small-business WordPress sites on shared hosting, Cloudflare-fronted VPS infrastructure, and LLM-powered applications. Specific incident details and indicators of compromise have been generalized so the guidance is portable.
+
+Need help applying any of this to your own systems? → [goldenwing.at](https://goldenwing.at)
 
 If a skill saved you time or helped during an incident, a GitHub star helps others find this. Issues and PRs welcome.
 
