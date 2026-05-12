@@ -3,10 +3,10 @@
 > Production-tested defensive security skills for [Claude Code](https://claude.com/claude-code) — checklists, playbooks, and hardening guides for WordPress, VPS servers, Cloudflare, Next.js, AI agents, MCP servers, and incident response. Battle-tested on real compromises, generalized for everyone.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/skills-24-blue.svg)](#skills-by-category)
+[![Skills](https://img.shields.io/badge/skills-25-blue.svg)](#skills-by-category)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-purple.svg)](https://claude.com/claude-code)
 
-**24 self-contained `SKILL.md` files** covering everything from "how do I detect a webshell on WordPress" to "how do I harden an AI agent that can write to production". Each skill is a single Markdown file with YAML frontmatter — Claude Code auto-triggers them on relevant requests, but they are equally usable as plain runbooks for humans.
+**25 self-contained `SKILL.md` files** covering everything from "how do I detect a webshell on WordPress" to "how do I harden an AI agent that can write to production". Each skill is a single Markdown file with YAML frontmatter — Claude Code auto-triggers them on relevant requests, but they are equally usable as plain runbooks for humans.
 
 ## Table of contents
 
@@ -60,6 +60,7 @@ The class of risks that classical security tooling does not yet handle well — 
 | [`ai-agent-guardrails`](./ai-agent-guardrails/SKILL.md) | Designing an autonomous agent, granting an LLM write access to production, after an agent makes an unexpected change. Covers blast-radius classification, dry-run-first, out-of-band approval gates, scope locking, idempotency, kill switches, rollback. |
 | [`prompt-injection-defense`](./prompt-injection-defense/SKILL.md) | Building any app where untrusted text reaches an LLM (chat, RAG, summarize-this-URL), or where the LLM has tools that act on real systems. Covers source-of-trust tagging, tool-use confirmation after untrusted input, output validation, markdown-image exfiltration prevention. |
 | [`llm-app-security`](./llm-app-security/SKILL.md) | Shipping an LLM feature to production, handling an abuse complaint, after a model-provider advisory. Walks the OWASP LLM Top 10, covers rate limits, cost caps, PII scrubbing, audit logging, model-version pinning, AI-incident playbook. |
+| [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) | Reviewing LLM-written code, designing a coding agent's guardrails, onboarding a team to "vibe coding", investigating an LLM-driven incident. The antipattern catalog: bulk-ops without review, safety-guard bypass as friction, indirect injection acted on, secrets in logs, slopsquat-bait packages, outdated training patterns, sycophancy on insecure proposals, and more. |
 
 ### 🌐 Web application security
 
@@ -141,6 +142,12 @@ These are written as the questions people actually type into a search bar.
 ### "How do I prevent prompt injection in my LLM app?"
 → [`prompt-injection-defense`](./prompt-injection-defense/SKILL.md) — the "untrusted-since-confirm" pattern is the single highest-leverage defense for agent systems.
 
+### "What are the most common security mistakes Claude / GPT / Copilot make in code?"
+→ [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) — the antipattern catalog. Top 10 plus 5 honorable mentions, with detection patterns for code reviewers and mitigations for agent designers.
+
+### "How do I review LLM-generated code for security issues?"
+→ [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) — walks the recurring failure modes (slopsquatting, hallucinated APIs, bypassed safety guards, silent error swallowing, sycophancy) with what to look for in the diff.
+
 ### "How do I safely give an AI agent write access to production?"
 → [`ai-agent-guardrails`](./ai-agent-guardrails/SKILL.md) — blast-radius classification, dry-run-first, out-of-band approval gates, kill switches. Pairs with [`mcp-security`](./mcp-security/SKILL.md) for the MCP-server side.
 
@@ -203,4 +210,4 @@ If a skill saved you time or helped during an incident, a GitHub star helps othe
 
 ---
 
-**Keywords**: Claude Code skills, Claude Code security, defensive security, AI security, LLM security, MCP server security, prompt injection defense, OWASP LLM Top 10, WordPress security checklist, webshell detection, VPS hardening guide, Cloudflare WAF setup, Next.js security, Stripe webhook security, Postgres hardening, Docker security, secret rotation, git history purge, incident response playbook, GDPR technical controls, DACH Impressum, GitHub Actions OIDC, SPF DKIM DMARC, iOS Keychain.
+**Keywords**: Claude Code skills, Claude Code security, defensive security, AI security, LLM security, MCP server security, prompt injection defense, OWASP LLM Top 10, LLM coding antipatterns, vibe coding security, slopsquatting, AI agent guardrails, WordPress security checklist, webshell detection, VPS hardening guide, Cloudflare WAF setup, Next.js security, Stripe webhook security, Postgres hardening, Docker security, secret rotation, git history purge, incident response playbook, GDPR technical controls, DACH Impressum, GitHub Actions OIDC, SPF DKIM DMARC, iOS Keychain.
