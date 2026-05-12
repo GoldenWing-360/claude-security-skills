@@ -5,7 +5,7 @@ Defensive security skills for [Claude Code](https://claude.com/claude-code). Eac
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-555.svg)](https://claude.com/claude-code)
 
-Coverage: WordPress, VPS / Cloudflare / Next.js / API hardening, backend architecture, AI agent guardrails and MCP security, prompt injection defense, OWASP LLM Top 10, file upload safety, codebase audit methodology, incident response, backups, GDPR / DACH compliance — 30 skills total.
+Coverage: WordPress, VPS / Cloudflare / Next.js / API hardening, Kubernetes, distributed-system audit, agent / client / message-bus security, backend architecture, AI agent guardrails and MCP security, prompt injection defense, OWASP LLM Top 10, file upload safety, codebase audit methodology, incident response, backups, GDPR / DACH compliance — 34 skills total.
 
 ## Table of contents
 
@@ -16,6 +16,7 @@ Coverage: WordPress, VPS / Cloudflare / Next.js / API hardening, backend archite
   - [AI & LLM security](#-ai--llm-security-the-2026-attack-surface)
   - [Web application security](#-web-application-security)
   - [Server & infrastructure](#-server--infrastructure)
+  - [Distributed systems](#-distributed-systems)
   - [Architecture & reliability](#-architecture--reliability)
   - [Audit & review](#-audit--review)
   - [Identity & access](#-identity--access)
@@ -53,7 +54,7 @@ Use any skill in three ways:
 ## Repository structure
 
 <details>
-<summary>30 skills + repo metadata — click to expand</summary>
+<summary>34 skills + repo metadata — click to expand</summary>
 
 ```
 claude-security-skills/
@@ -66,6 +67,7 @@ claude-security-skills/
 │   ├── PULL_REQUEST_TEMPLATE.md
 │   └── SOCIAL_PREVIEW.md
 │
+├── agent-client-security/SKILL.md
 ├── ai-agent-guardrails/SKILL.md
 ├── api-security/SKILL.md
 ├── auth-hardening/SKILL.md
@@ -75,6 +77,7 @@ claude-security-skills/
 ├── codebase-audit/SKILL.md
 ├── dach-compliance/SKILL.md
 ├── dependency-supply-chain/SKILL.md
+├── distributed-system-audit/SKILL.md
 ├── docker-container-security/SKILL.md
 ├── email-deliverability-security/SKILL.md
 ├── file-upload-security/SKILL.md
@@ -83,10 +86,12 @@ claude-security-skills/
 ├── honeypot-tarpits/SKILL.md
 ├── incident-response/SKILL.md
 ├── ios-security/SKILL.md
+├── kubernetes-security/SKILL.md
 ├── llm-app-security/SKILL.md
 ├── llm-coding-failure-modes/SKILL.md
 ├── log-strategy/SKILL.md
 ├── mcp-security/SKILL.md
+├── message-bus-security/SKILL.md
 ├── nextjs-security/SKILL.md
 ├── payload-cms-security/SKILL.md
 ├── postgres-hardening/SKILL.md
@@ -141,6 +146,15 @@ The class of risks that classical security tooling does not yet handle well — 
 | [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) | Onboarding a domain to Cloudflare, when origin IP may be exposed, after an attack. Covers account hardening, Authenticated Origin Pulls, WAF Managed Rules, Bot Fight, Rate Limiting, Transform Rules for headers, Zero Trust Access for admin paths, R2 / Pages security. |
 | [`postgres-hardening`](./postgres-hardening/SKILL.md) | Provisioning a new PostgreSQL deployment, before opening it to a new app, after an advisory, or reviewing a multi-tenant schema. Covers `pg_hba.conf`, role separation, row-level security, backup encryption, pg_audit, version upgrades. |
 | [`docker-container-security`](./docker-container-security/SKILL.md) | Adding Docker to a VPS with UFW (and hitting the bypass surprise), writing a new Dockerfile, pushing to a public registry, periodic audit. Covers non-root users, read-only FS, dropped capabilities, secret mounts, trivy scanning, distroless bases. |
+| [`kubernetes-security`](./kubernetes-security/SKILL.md) | Provisioning a new cluster, inheriting one, before opening a cluster to a new tenant, after a K8s CVE. Covers Pod Security Standards (Restricted / Baseline / Privileged), RBAC with least privilege, NetworkPolicy default-deny, secrets without env vars (SealedSecrets / External Secrets / SOPS), admission controllers (Kyverno / OPA), image scanning, audit logging, common findings on inherited clusters. |
+
+### 🛰 Distributed systems
+
+| Skill | Use when |
+|---|---|
+| [`distributed-system-audit`](./distributed-system-audit/SKILL.md) | Auditing a client/server product, microservices, IoT or fleet-management backend, multi-tenant SaaS with workers, acquisition due-diligence on a distributed product. Map first, judge later: per-component trust analysis, protocol audit (replay / ordering / forgery), threat-modeling-lite, failure-mode audit, forensic accountability, multi-tenant isolation. |
+| [`agent-client-security`](./agent-client-security/SKILL.md) | Shipping a native agent / endpoint client (monitoring, RMM, deployment, CI runner, IoT controller), designing the installer / updater, auditing one before adoption. Covers installer integrity and code signing per platform, OTA update channel with rollback and kill-switch, mTLS with per-agent identity, local secret storage (Keychain / DPAPI / libsecret), anti-tampering signals, telemetry hygiene. |
+| [`message-bus-security`](./message-bus-security/SKILL.md) | Introducing NATS / RabbitMQ / Kafka / MQTT to an architecture, adding multi-tenancy to an existing bus, after cross-tenant message leakage, auditing a system that uses a bus. Covers account / vhost / topic-prefix tenancy, deny-default permissions, mTLS / NKEYs / SASL auth, replay protection + idempotency at consumer, encryption in-transit and at-rest, cross-cluster trust. |
 
 ### 🎯 Architecture & reliability
 
@@ -240,6 +254,18 @@ These are written as the questions people actually type into a search bar.
 
 ### "How do I audit a codebase I just inherited?"
 → [`codebase-audit`](./codebase-audit/SKILL.md) — the methodology: scope discipline, 30-minute Day-0 triage, tool recipes (semgrep / CodeQL / gitleaks / trivy), OWASP Top 10 grep patterns, auth-surface walkthrough, writing a report that drives action. Cross-links into every other skill as the deep-dive material per finding.
+
+### "How do I audit a distributed system / agent platform?"
+→ [`distributed-system-audit`](./distributed-system-audit/SKILL.md) — different from code audit: map architecture and trust boundaries first, then per-channel protocol audit (replay / ordering / forgery), failure-mode walk, forensic accountability. Pair with [`codebase-audit`](./codebase-audit/SKILL.md) for the per-component code work.
+
+### "How do I secure a fleet of native agents on customer machines?"
+→ [`agent-client-security`](./agent-client-security/SKILL.md) — installer signing, OTA update channel with rollback, mTLS with per-agent identity, local secret storage (Keychain / DPAPI), anti-tampering signals, telemetry hygiene.
+
+### "How do I lock down NATS / RabbitMQ / Kafka for multi-tenant use?"
+→ [`message-bus-security`](./message-bus-security/SKILL.md) — account / vhost / topic-prefix tenancy, deny-default subject permissions, mTLS / NKEYs, replay protection + consumer idempotency, cross-cluster trust.
+
+### "How do I harden a Kubernetes cluster?"
+→ [`kubernetes-security`](./kubernetes-security/SKILL.md) — Pod Security Standards, RBAC, NetworkPolicy default-deny, secrets without env vars, admission controllers, common findings on inherited clusters.
 
 ### "We have backups but nobody has ever restored them"
 → [`backup-disaster-recovery`](./backup-disaster-recovery/SKILL.md) — RPO/RTO definition, 3-2-1 rule, encryption before leaving the host, ransomware-resistant immutable storage, quarterly restore drills, the things-that-aren't-the-database checklist.
