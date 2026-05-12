@@ -8,6 +8,7 @@
 
 ### Defensive security playbooks for LLM coding agents and the developers using them
 
+[![CI](https://img.shields.io/github/actions/workflow/status/GoldenWing-360/claude-security-skills/validate.yml?branch=main&style=flat-square&label=validate)](https://github.com/GoldenWing-360/claude-security-skills/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Skills](https://img.shields.io/badge/skills-34-brightgreen.svg?style=flat-square)](#skills-by-category)
 [![Domains](https://img.shields.io/badge/domains-13-9cf.svg?style=flat-square)](#whats-inside--13-security-domains)
@@ -127,9 +128,15 @@ claude-security-skills/
 │   │   ├── bug-report.md
 │   │   ├── config.yml
 │   │   └── skill-request.md
+│   ├── workflows/
+│   │   └── validate.yml
+│   ├── dependabot.yml
 │   ├── FUNDING.yml
 │   ├── PULL_REQUEST_TEMPLATE.md
 │   └── SOCIAL_PREVIEW.md
+│
+├── tools/
+│   └── validate.py
 │
 ├── agent-client-security/SKILL.md
 ├── ai-agent-guardrails/SKILL.md
