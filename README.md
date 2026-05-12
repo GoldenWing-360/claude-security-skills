@@ -1,23 +1,23 @@
 # Claude Code Security Skills
 
-> Production-tested defensive security skills for [Claude Code](https://claude.com/claude-code) — checklists, playbooks, and hardening guides for WordPress, VPS servers, Cloudflare, Next.js, AI agents, MCP servers, and incident response. Battle-tested on real compromises, generalized for everyone.
+Defensive security skills for [Claude Code](https://claude.com/claude-code). Each skill is a single Markdown file with YAML frontmatter — Claude Code can auto-trigger them, and they read equally well as plain runbooks for humans.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/skills-26-blue.svg)](#skills-by-category)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-purple.svg)](https://claude.com/claude-code)
-[![Made by GoldenWing](https://img.shields.io/badge/made%20by-goldenwing.at-orange.svg)](https://goldenwing.at)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-555.svg)](https://claude.com/claude-code)
 
-**26 self-contained `SKILL.md` files** covering everything from "how do I detect a webshell on WordPress" to "how do I harden an AI agent that can write to production". Each skill is a single Markdown file with YAML frontmatter — Claude Code auto-triggers them on relevant requests, but they are equally usable as plain runbooks for humans.
+Coverage: WordPress, VPS / Cloudflare / Next.js / API hardening, backend architecture, AI agent guardrails and MCP security, prompt injection defense, OWASP LLM Top 10, file upload safety, codebase audit methodology, incident response, backups, GDPR / DACH compliance — 30 skills total.
 
 ## Table of contents
 
 - [Who this is for](#who-this-is-for)
 - [Quick start](#quick-start)
+- [Repository structure](#repository-structure)
 - [Skills by category](#skills-by-category)
   - [AI & LLM security](#-ai--llm-security-the-2026-attack-surface)
   - [Web application security](#-web-application-security)
   - [Server & infrastructure](#-server--infrastructure)
   - [Architecture & reliability](#-architecture--reliability)
+  - [Audit & review](#-audit--review)
   - [Identity & access](#-identity--access)
   - [Supply chain & CI/CD](#-supply-chain--cicd)
   - [Compliance (EU / DACH)](#-compliance-eu--dach)
@@ -50,6 +50,64 @@ Use any skill in three ways:
 2. **As a runbook for yourself** — open `<skill-name>/SKILL.md` and follow the steps.
 3. **As a checklist for review** — paste the skill into a PR or audit doc and walk through it.
 
+## Repository structure
+
+<details>
+<summary>30 skills + repo metadata — click to expand</summary>
+
+```
+claude-security-skills/
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug-report.md
+│   │   ├── config.yml
+│   │   └── skill-request.md
+│   ├── FUNDING.yml
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── SOCIAL_PREVIEW.md
+│
+├── ai-agent-guardrails/SKILL.md
+├── api-security/SKILL.md
+├── auth-hardening/SKILL.md
+├── backend-architecture/SKILL.md
+├── backup-disaster-recovery/SKILL.md
+├── cloudflare-hardening/SKILL.md
+├── codebase-audit/SKILL.md
+├── dach-compliance/SKILL.md
+├── dependency-supply-chain/SKILL.md
+├── docker-container-security/SKILL.md
+├── email-deliverability-security/SKILL.md
+├── file-upload-security/SKILL.md
+├── gdpr-technical-controls/SKILL.md
+├── github-actions-security/SKILL.md
+├── honeypot-tarpits/SKILL.md
+├── incident-response/SKILL.md
+├── ios-security/SKILL.md
+├── llm-app-security/SKILL.md
+├── llm-coding-failure-modes/SKILL.md
+├── log-strategy/SKILL.md
+├── mcp-security/SKILL.md
+├── nextjs-security/SKILL.md
+├── payload-cms-security/SKILL.md
+├── postgres-hardening/SKILL.md
+├── prompt-injection-defense/SKILL.md
+├── secret-hygiene/SKILL.md
+├── site-server-audit/SKILL.md
+├── stripe-webhook-security/SKILL.md
+├── vps-hardening/SKILL.md
+├── wordpress-hardening/SKILL.md
+│
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+└── SECURITY.md
+```
+
+Every skill is a self-contained `SKILL.md` with YAML frontmatter (`name`, `description`) plus a body that follows roughly: *when to invoke → detection / steps / patterns → checklist → what this skill will not do*.
+
+</details>
+
 ## Skills by category
 
 ### 🤖 AI & LLM security (the 2026 attack surface)
@@ -70,7 +128,9 @@ The class of risks that classical security tooling does not yet handle well — 
 |---|---|
 | [`wordpress-hardening`](./wordpress-hardening/SKILL.md) | A WordPress site shows unexpected files, suspicious admin accounts, defaced pages, or hardening a fresh install. Covers Sid Gifari / WSO / FilesMan webshell detection, mu-plugin defense pack, shared-hosting pivot defense, integrity monitoring. |
 | [`nextjs-security`](./nextjs-security/SKILL.md) | Reviewing a Next.js app before launch, after a major version upgrade (13 → 14 → 15 → 16), or when adding Server Actions. Covers middleware-bypass class, `NEXT_PUBLIC_` env leakage, RSC over-fetch, CSP, open redirects, `next/image` SSRF. |
+| [`api-security`](./api-security/SKILL.md) | Designing a new REST/GraphQL API, reviewing one before scaling, after abuse (scraping, account takeover via API). Walks the OWASP API Top 10: BOLA, broken auth, mass assignment, excessive data exposure, resource consumption, broken function-level auth, SSRF, misconfig, inventory, unsafe third-party consumption. |
 | [`payload-cms-security`](./payload-cms-security/SKILL.md) | Shipping Payload CMS to production, opening admin to non-developers, after a Payload version upgrade. Covers collection/field-level access control, hook safety, file uploads, GraphQL/REST surface, multi-tenant isolation. |
+| [`file-upload-security`](./file-upload-security/SKILL.md) | Adding upload to a new endpoint, after an upload-caused incident, migrating from local-disk to object storage, reviewing an inherited upload feature. Covers magic-byte validation, image re-encoding to defang polyglots, EXIF stripping, virus scanning, path-safe storage keys, separate-origin serving with `Content-Disposition`, signed URLs, presigned-PUT for large files. |
 | [`site-server-audit`](./site-server-audit/SKILL.md) | Onboarding a new client site, before launch, after infra changes, periodic re-audit. Read-only checklist: DNS, TLS/HSTS, security headers, exposed paths (`.git`, `.env`, backups), cookies, software fingerprint. |
 
 ### 🏗️ Server & infrastructure
@@ -87,6 +147,13 @@ The class of risks that classical security tooling does not yet handle well — 
 | Skill | Use when |
 |---|---|
 | [`backend-architecture`](./backend-architecture/SKILL.md) | "User uploads disappear after redeploy", scaling from one server to two, moving from prototype to production, handing off to a team that has to run it. The Solutions-Architect baseline: stateless apps + state in the right places (object storage / managed DB / Redis), immutable artifacts, health checks, graceful shutdown, migrations that don't lock the world, background jobs without `setTimeout`, twelve-factor patterns. |
+| [`backup-disaster-recovery`](./backup-disaster-recovery/SKILL.md) | "We have backups but nobody has ever restored them", new system holding production data, after a near-miss, before a major migration. Covers RPO/RTO, the 3-2-1 rule, encryption before leaving the host, ransomware-resistant immutable storage, restore drills (a backup you have not restored is a wish), the things-that-aren't-the-database backup list, retention split (operational vs legal). |
+
+### 🔎 Audit & review
+
+| Skill | Use when |
+|---|---|
+| [`codebase-audit`](./codebase-audit/SKILL.md) | Inheriting a codebase (new job, client takeover, acquisition), accepting an "audit my app" engagement, reviewing AI-generated code before shipping, periodic re-audit. The methodology: scope discipline, 30-minute Day-0 triage, SAST/SCA tool recipes (semgrep, CodeQL, gitleaks, trivy), OWASP Top 10 mapped to grep patterns, auth-surface walkthrough, dependency-and-infra review, writing the report (severity classes, reproduction, remediation), anti-patterns junior auditors fall into. |
 
 ### 🔐 Identity & access
 
@@ -148,13 +215,13 @@ These are written as the questions people actually type into a search bar.
 → [`secret-hygiene`](./secret-hygiene/SKILL.md) — covers rotation order (rotate first, purge second), `git-filter-repo` to scrub history, and prevention via pre-commit scanning.
 
 ### "How do I prevent prompt injection in my LLM app?"
-→ [`prompt-injection-defense`](./prompt-injection-defense/SKILL.md) — the "untrusted-since-confirm" pattern is the single highest-leverage defense for agent systems.
+→ [`prompt-injection-defense`](./prompt-injection-defense/SKILL.md) — source-of-trust tagging, tool-use confirmation after untrusted input, exfiltration prevention.
 
-### "What are the most common security mistakes Claude / GPT / Copilot make in code?"
-→ [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) — the antipattern catalog. Top 10 plus 5 honorable mentions, with detection patterns for code reviewers and mitigations for agent designers.
+### "What are the common security mistakes LLM coding agents make?"
+→ [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) — antipattern catalog. Detection for reviewers, mitigations for agent designers.
 
 ### "How do I review LLM-generated code for security issues?"
-→ [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) — walks the recurring failure modes (slopsquatting, hallucinated APIs, bypassed safety guards, silent error swallowing, sycophancy) with what to look for in the diff.
+→ [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) — recurring failure modes (slopsquatting, hallucinated APIs, bypassed safety guards, silent error swallowing) with what to look for in the diff.
 
 ### "How do I safely give an AI agent write access to production?"
 → [`ai-agent-guardrails`](./ai-agent-guardrails/SKILL.md) — blast-radius classification, dry-run-first, out-of-band approval gates, kill switches. Pairs with [`mcp-security`](./mcp-security/SKILL.md) for the MCP-server side.
@@ -170,6 +237,18 @@ These are written as the questions people actually type into a search bar.
 
 ### "How do I deploy without downtime?"
 → [`backend-architecture`](./backend-architecture/SKILL.md) — immutable artifacts, `/healthz` + `/readyz` endpoints, SIGTERM drain. Plus database migrations that don't lock the world.
+
+### "How do I audit a codebase I just inherited?"
+→ [`codebase-audit`](./codebase-audit/SKILL.md) — the methodology: scope discipline, 30-minute Day-0 triage, tool recipes (semgrep / CodeQL / gitleaks / trivy), OWASP Top 10 grep patterns, auth-surface walkthrough, writing a report that drives action. Cross-links into every other skill as the deep-dive material per finding.
+
+### "We have backups but nobody has ever restored them"
+→ [`backup-disaster-recovery`](./backup-disaster-recovery/SKILL.md) — RPO/RTO definition, 3-2-1 rule, encryption before leaving the host, ransomware-resistant immutable storage, quarterly restore drills, the things-that-aren't-the-database checklist.
+
+### "How do I prevent BOLA / broken access control in my API?"
+→ [`api-security`](./api-security/SKILL.md) — the #1 API vulnerability and not even close. Plus mass assignment, excessive data exposure, SSRF, GraphQL depth/complexity limits, the OWASP API Top 10 walked end-to-end.
+
+### "How do I accept user file uploads safely?"
+→ [`file-upload-security`](./file-upload-security/SKILL.md) — magic-byte validation (not MIME header), image re-encoding to defang polyglots, EXIF stripping, virus scanning for documents, serving from a separate origin with `Content-Disposition`, signed URLs, presigned-PUT for large files.
 
 ### "My Cloudflare site got attacked, how do I lock it down?"
 → [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) — WAF rules, Bot Fight, Rate Limiting, Authenticated Origin Pulls so attackers cannot bypass the proxy by hitting your origin IP directly.
@@ -217,16 +296,8 @@ Please keep contributions defensive in spirit. No exploitation tradecraft, no re
 
 ## License
 
-[MIT](./LICENSE) — use freely in your own projects, agencies, and trainings.
+[MIT](./LICENSE).
 
-## Background
+## Maintainers
 
-Built and maintained by [**GoldenWing**](https://goldenwing.at) ([GitHub: GoldenWing-360](https://github.com/GoldenWing-360)) — a Vienna-based studio working at the intersection of web engineering, AI integration, and infrastructure security. The patterns here are distilled from real cleanup, hardening, and incident-response work — particularly across small-business WordPress sites on shared hosting, Cloudflare-fronted VPS infrastructure, and LLM-powered applications. Specific incident details and indicators of compromise have been generalized so the guidance is portable.
-
-Need help applying any of this to your own systems? → [goldenwing.at](https://goldenwing.at)
-
-If a skill saved you time or helped during an incident, a GitHub star helps others find this. Issues and PRs welcome.
-
----
-
-**Keywords**: Claude Code skills, Claude Code security, defensive security, AI security, LLM security, MCP server security, prompt injection defense, OWASP LLM Top 10, LLM coding antipatterns, vibe coding security, slopsquatting, AI agent guardrails, WordPress security checklist, webshell detection, VPS hardening guide, Cloudflare WAF setup, Next.js security, Stripe webhook security, Postgres hardening, Docker security, secret rotation, git history purge, incident response playbook, GDPR technical controls, DACH Impressum, GitHub Actions OIDC, SPF DKIM DMARC, iOS Keychain, backend architecture, twelve-factor app, stateless deploys, object storage upload, zero-downtime deployment, solutions architect baseline.
+Maintained by [GoldenWing](https://goldenwing.at). Patterns here are distilled from real cleanup, hardening, and incident-response work. Specific indicators of compromise and customer details have been generalized so the guidance is portable.
