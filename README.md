@@ -10,7 +10,7 @@
 
 [![CI](https://img.shields.io/github/actions/workflow/status/GoldenWing-360/claude-security-skills/validate.yml?branch=main&style=flat-square&label=validate)](https://github.com/GoldenWing-360/claude-security-skills/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-34-brightgreen.svg?style=flat-square)](#skills-by-category)
+[![Skills](https://img.shields.io/badge/skills-38-brightgreen.svg?style=flat-square)](#skills-by-category)
 [![Domains](https://img.shields.io/badge/domains-13-9cf.svg?style=flat-square)](#whats-inside--13-security-domains)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-555.svg?style=flat-square)](https://claude.com/claude-code)
 [![Stars](https://img.shields.io/github/stars/GoldenWing-360/claude-security-skills?style=flat-square)](https://github.com/GoldenWing-360/claude-security-skills/stargazers)
@@ -20,7 +20,7 @@
 [![Featured on dev.to](https://img.shields.io/badge/Featured%20on-dev.to-black.svg?style=flat-square&logo=devdotto)](https://dev.to/goldenwing360/10-security-mistakes-claude-code-and-copilot-make-in-production-584l)
 [![Announcement on goldenwing.at](https://img.shields.io/badge/Announcement-goldenwing.at-f2fb31.svg?style=flat-square)](https://goldenwing.at/en/blog/claude-code-security-skills-open-source)
 
-**34 production-tested skills · 13 security domains · defensive-only · MIT-licensed**
+**38 production-tested skills · 13 security domains · defensive-only · MIT-licensed**
 
 [Get started](#quick-start) · [What's inside](#whats-inside--13-security-domains) · [Find a skill](#find-the-right-skill) · [Read on dev.to](https://dev.to/goldenwing360/10-security-mistakes-claude-code-and-copilot-make-in-production-584l) · [Read on goldenwing.at](https://goldenwing.at/en/blog/claude-code-security-skills-open-source) · [Contributing](./CONTRIBUTING.md)
 
@@ -34,15 +34,15 @@
 
 A senior engineer knows when a `--no-verify` flag is hiding a real bug, when an empty `catch {}` is silently swallowing an auth check, what to do when a customer's WordPress site starts redirecting to a casino, and how to harden a fresh VPS in thirty minutes. **Your AI coding agent doesn't — unless you give it these skills.**
 
-This repo contains **34 production-tested defensive security skills**, each a self-contained Markdown file with YAML frontmatter so Claude Code (or any compatible agent) can auto-trigger the right one. Every skill comes from real incident-response, hardening, and audit work — generalized so the patterns travel beyond the original engagement. Clone it, point your agent at it, and your next deploy, audit, or 3am alert gets expert-level guidance in seconds.
+This repo contains **38 production-tested defensive security skills**, each a self-contained Markdown file with YAML frontmatter so Claude Code (or any compatible agent) can auto-trigger the right one. Every skill comes from real incident-response, hardening, and audit work — generalized so the patterns travel beyond the original engagement. Clone it, point your agent at it, and your next deploy, audit, or 3am alert gets expert-level guidance in seconds.
 
 ## What's inside — 13 security domains
 
 | Domain | Skills | What it covers |
 |---|---|---|
-| 🤖 AI & LLM security | 5 | MCP security · agent guardrails · prompt injection defense · OWASP LLM Top 10 · coding-agent failure modes |
+| 🤖 AI & LLM security | 6 | MCP security · agent guardrails · prompt injection defense · OWASP LLM Top 10 · coding-agent failure modes · RAG pipelines |
 | 🌐 Web application | 6 | WordPress · Next.js · Payload CMS · API (OWASP API Top 10) · Stripe webhooks · file upload safety |
-| 🏗️ Server & infrastructure | 5 | VPS · Cloudflare · Postgres · Docker · Kubernetes |
+| 🏗️ Server & infrastructure | 7 | VPS · Cloudflare · Postgres · Docker · Kubernetes · DNS & domains · object storage (S3 / R2) |
 | 🛰 Distributed systems | 3 | Distributed-system audit · native-agent / client security · message bus (NATS / RabbitMQ / Kafka) |
 | 🎯 Architecture & reliability | 2 | Backend architecture (twelve-factor, stateless deploys) · backups & disaster recovery |
 | 🔎 Audit & review | 2 | Codebase audit methodology · site / server audit checklist |
@@ -52,7 +52,7 @@ This repo contains **34 production-tested defensive security skills**, each a se
 | 🔍 Detection & monitoring | 2 | Log strategy (operational / access / audit) · honeypots & tarpits |
 | 🛡️ Incident response | 1 | SANS PICERL runbook with post-mortem template |
 | 📨 Email security | 1 | SPF / DKIM / DMARC (with the p=none → p=reject migration path) |
-| 📱 Mobile security | 1 | iOS / macOS — Keychain, ATS, certificate pinning, jailbreak signal |
+| 📱 Mobile security | 2 | iOS / macOS — Keychain, ATS, pinning · Android — Keystore, Play Integrity, WebView |
 
 ## Who this is for
 
@@ -109,7 +109,7 @@ A companion [`index.json`](./index.json) at the repo root indexes every skill's 
 
 Reference material that complements the skills:
 
-- 📝 **[Prompt Library](./docs/PROMPTS.md)** — ready-to-use prompts that reliably trigger each of the 34 skills
+- 📝 **[Prompt Library](./docs/PROMPTS.md)** — ready-to-use prompts that reliably trigger each of the 38 skills
 - 📖 **[Security Glossary](./docs/GLOSSARY.md)** — definitions of terms used across the skills (BOLA, mTLS, RPO/RTO, slopsquatting, ...)
 - ❓ **[FAQ](./docs/FAQ.md)** — installation, compatibility, contribution flow, commercial use
 
@@ -120,7 +120,7 @@ Skills use plain Markdown with YAML frontmatter (`name`, `description`). Tested 
 ## Repository structure
 
 <details>
-<summary>34 skills + repo metadata — click to expand</summary>
+<summary>38 skills + repo metadata — click to expand</summary>
 
 ```
 claude-security-skills/
@@ -141,6 +141,7 @@ claude-security-skills/
 │
 ├── agent-client-security/SKILL.md
 ├── ai-agent-guardrails/SKILL.md
+├── android-security/SKILL.md
 ├── api-security/SKILL.md
 ├── auth-hardening/SKILL.md
 ├── backend-architecture/SKILL.md
@@ -150,6 +151,7 @@ claude-security-skills/
 ├── dach-compliance/SKILL.md
 ├── dependency-supply-chain/SKILL.md
 ├── distributed-system-audit/SKILL.md
+├── dns-domain-security/SKILL.md
 ├── docker-container-security/SKILL.md
 ├── email-deliverability-security/SKILL.md
 ├── file-upload-security/SKILL.md
@@ -165,9 +167,11 @@ claude-security-skills/
 ├── mcp-security/SKILL.md
 ├── message-bus-security/SKILL.md
 ├── nextjs-security/SKILL.md
+├── object-storage-security/SKILL.md
 ├── payload-cms-security/SKILL.md
 ├── postgres-hardening/SKILL.md
 ├── prompt-injection-defense/SKILL.md
+├── rag-security/SKILL.md
 ├── secret-hygiene/SKILL.md
 ├── site-server-audit/SKILL.md
 ├── stripe-webhook-security/SKILL.md
@@ -206,6 +210,7 @@ Each link goes to the full `SKILL.md` with detection commands, step-by-step proc
 | [`prompt-injection-defense`](./prompt-injection-defense/SKILL.md) | Source-of-trust tagging, tool-use confirmation after untrusted input, exfiltration prevention. |
 | [`llm-app-security`](./llm-app-security/SKILL.md) | OWASP LLM Top 10 mapped to practical controls — rate limits, cost caps, PII scrubbing, audit logging. |
 | [`llm-coding-failure-modes`](./llm-coding-failure-modes/SKILL.md) | Antipattern catalog for LLM coding agents — bulk ops, bypassed guards, slopsquatting, sycophancy. |
+| [`rag-security`](./rag-security/SKILL.md) | RAG pipelines — document-level authorization at retrieval time, tenant isolation in vector DBs, poisoned-corpus defense. |
 
 ### 🌐 Web application
 
@@ -228,6 +233,8 @@ Each link goes to the full `SKILL.md` with detection commands, step-by-step proc
 | [`postgres-hardening`](./postgres-hardening/SKILL.md) | `pg_hba`, role separation, row-level security, TLS, encrypted backups, `pg_audit`. |
 | [`docker-container-security`](./docker-container-security/SKILL.md) | Non-root users, read-only filesystems, dropped capabilities, image scanning, the UFW-bypass trap. |
 | [`kubernetes-security`](./kubernetes-security/SKILL.md) | Pod Security Standards, RBAC least-privilege, NetworkPolicy default-deny, admission controllers. |
+| [`dns-domain-security`](./dns-domain-security/SKILL.md) | Dangling records and subdomain takeover, registrar lock, CAA, DNSSEC tradeoffs, CT-log monitoring. |
+| [`object-storage-security`](./object-storage-security/SKILL.md) | S3 / R2 / GCS — public-access audit, presigned URLs done right, scoped credentials, object lock. |
 
 ### 🛰 Distributed systems
 
@@ -295,6 +302,7 @@ Each link goes to the full `SKILL.md` with detection commands, step-by-step proc
 | Skill | Summary |
 |---|---|
 | [`ios-security`](./ios-security/SKILL.md) | Keychain accessibility tiers, ATS, certificate pinning, file protection, jailbreak detection as signal. |
+| [`android-security`](./android-security/SKILL.md) | Keystore + StrongBox, exported components, WebView hardening, backup rules, Play Integrity as signal. |
 
 ## Find the right skill
 
@@ -326,6 +334,10 @@ Each link goes to the full `SKILL.md` with detection commands, step-by-step proc
 | Blocking brute force on `/wp-login.php` | [`wordpress-hardening`](./wordpress-hardening/SKILL.md) + [`vps-hardening`](./vps-hardening/SKILL.md) + [`cloudflare-hardening`](./cloudflare-hardening/SKILL.md) |
 | Writing a post-mortem after a breach | [`incident-response`](./incident-response/SKILL.md) |
 | Configuring SPF / DKIM / DMARC | [`email-deliverability-security`](./email-deliverability-security/SKILL.md) |
+| CNAME points at a deprovisioned service (subdomain takeover) | [`dns-domain-security`](./dns-domain-security/SKILL.md) |
+| S3 / R2 bucket accidentally public | [`object-storage-security`](./object-storage-security/SKILL.md) |
+| RAG answers leak documents users shouldn't see | [`rag-security`](./rag-security/SKILL.md) |
+| Shipping an Android app that holds tokens | [`android-security`](./android-security/SKILL.md) |
 
 ## Using with Claude Code
 

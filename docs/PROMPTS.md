@@ -35,6 +35,11 @@ Prompts work in any language the model speaks. English versions below; German va
 - "We had an incident where the agent disabled CSRF 'temporarily' and it stayed off for months. What pattern is this and how do I prevent it?"
 - "Onboard our team to vibe-coding safely. What's the antipattern catalog?"
 
+### `rag-security`
+- "Our RAG chatbot indexes the whole company wiki. Users are seeing content from documents they don't have access to. Fix the design."
+- "We let customers upload documents into a shared knowledge base for our AI assistant. What can go wrong and how do I contain it?"
+- "Review our vector-database setup for tenant isolation — one Pinecone index, all customers, metadata filter per query."
+
 ---
 
 ## 🌐 Web application
@@ -102,6 +107,16 @@ Prompts work in any language the model speaks. English versions below; German va
 - "I inherited a Kubernetes cluster. Audit it for the common findings."
 - "Roll out Pod Security Standards `restricted` mode across all app namespaces. What breaks?"
 - "Set up NetworkPolicy default-deny in our production namespace."
+
+### `dns-domain-security`
+- "We decommissioned a bunch of services last year. Audit our DNS zone for dangling records before someone takes over a subdomain."
+- "Lock down our domain portfolio — registrar security, transfer locks, CAA, expiry monitoring. What's the checklist?"
+- "A certificate showed up in CT logs for one of our subdomains that we never issued. What happened and what do I do?"
+
+### `object-storage-security`
+- "Audit our S3 buckets — I want to know nothing is public that shouldn't be and our IAM policies aren't over-scoped."
+- "We serve user uploads straight from our R2 bucket. Design presigned upload and download flows that don't leak the whole bucket."
+- "Make our backups bucket ransomware-resistant — versioning, object lock, separate credentials."
 
 ---
 
@@ -227,6 +242,11 @@ Prompts work in any language the model speaks. English versions below; German va
 - "I'm shipping an iOS app that stores OAuth refresh tokens. What's the right Keychain configuration?"
 - "Pre-App-Store-submission security review for our app — Keychain, ATS, third-party SDKs, privacy strings."
 - "Add certificate pinning to our app. What are the tradeoffs and how do I avoid bricking on cert rotation?"
+
+### `android-security`
+- "I'm shipping an Android app that stores OAuth refresh tokens. Keystore, EncryptedSharedPreferences, or what?"
+- "Pre-Play-Store security review for our app — exported components, backup rules, WebView settings, third-party SDKs."
+- "Our Android app has a WebView with a JavaScript bridge. Harden it."
 
 ---
 

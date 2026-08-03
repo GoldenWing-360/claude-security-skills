@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "skill_count": 34,
+  "version": "1.1.0",
+  "skill_count": 38,
   "skills": [
     {
       "slug": "agent-client-security",
@@ -15,6 +15,13 @@
       "domain": "ai-llm",
       "description": "Apply safety controls when an LLM agent has authority to act on real systems. Covers blast-radius classification, dry-run-first patterns, out-of-band approval gates, scope locking, idempotency, kill switches, and rollback strategies. Invoke when designing an autonomous agent, when granting an LLM write access to production, or after an agent makes an unexpected change.",
       "path": "ai-agent-guardrails/SKILL.md"
+    },
+    {
+      "slug": "android-security",
+      "name": "android-security",
+      "domain": "mobile",
+      "description": "Harden Android apps against the platform-specific failure modes. Covers Android Keystore and StrongBox, encrypted local storage, network security config and certificate pinning, WebView hardening, exported components and intent hijacking, backup rules, and Play Integrity with root detection as a signal. Invoke when shipping an Android app that holds credentials or tokens, before Play Store submission, or after a mobile security advisory.",
+      "path": "android-security/SKILL.md"
     },
     {
       "slug": "api-security",
@@ -62,7 +69,7 @@
       "slug": "dach-compliance",
       "name": "dach-compliance",
       "domain": "compliance",
-      "description": "Cover Germany, Austria, and Switzerland compliance requirements that have security implications. Covers Impressum content per TMG/MStV/ECG, Datenschutzerkl\u00e4rung per DSGVO/TTDSG/DSG, AGB and Widerrufsbelehrung, AVV/DPA for sub-processors, technical-organizational measures (TOMs), and cookie consent that satisfies all three jurisdictions. Invoke when launching a DACH-facing site, adding third-party services, or reviewing an inherited DACH site.",
+      "description": "Cover Germany, Austria, and Switzerland compliance requirements that have security implications. Covers Impressum content per TMG/MStV/ECG, Datenschutzerklärung per DSGVO/TTDSG/DSG, AGB and Widerrufsbelehrung, AVV/DPA for sub-processors, technical-organizational measures (TOMs), and cookie consent that satisfies all three jurisdictions. Invoke when launching a DACH-facing site, adding third-party services, or reviewing an inherited DACH site.",
       "path": "dach-compliance/SKILL.md"
     },
     {
@@ -80,6 +87,13 @@
       "path": "distributed-system-audit/SKILL.md"
     },
     {
+      "slug": "dns-domain-security",
+      "name": "dns-domain-security",
+      "domain": "infrastructure",
+      "description": "Secure the DNS and domain layer below TLS — the records, registrar, and provider access everyone forgets. Covers dangling records and subdomain takeover, registrar hardening and transfer locks, CAA, DNSSEC trade-offs, zone hygiene, split-horizon leakage, scoped DNS API tokens, and CT-log monitoring. Invoke when auditing a zone, when a domain or registrar account changes hands, or after decommissioning a SaaS service a CNAME pointed at.",
+      "path": "dns-domain-security/SKILL.md"
+    },
+    {
       "slug": "docker-container-security",
       "name": "docker-container-security",
       "domain": "infrastructure",
@@ -90,7 +104,7 @@
       "slug": "email-deliverability-security",
       "name": "email-deliverability-security",
       "domain": "email",
-      "description": "Configure email authentication so legitimate mail lands and spoofed mail is blocked. Covers SPF, DKIM, DMARC (with the p=none \u2192 p=quarantine \u2192 p=reject migration path), MTA-STS, TLS-RPT, ARC, and BIMI. Invoke when launching a new sending domain, when domains are being spoofed, or when transactional email is landing in spam.",
+      "description": "Configure email authentication so legitimate mail lands and spoofed mail is blocked. Covers SPF, DKIM, DMARC (with the p=none → p=quarantine → p=reject migration path), MTA-STS, TLS-RPT, ARC, and BIMI. Invoke when launching a new sending domain, when domains are being spoofed, or when transactional email is landing in spam.",
       "path": "email-deliverability-security/SKILL.md"
     },
     {
@@ -125,7 +139,7 @@
       "slug": "incident-response",
       "name": "incident-response",
       "domain": "incident-response",
-      "description": "Run a structured response to a suspected web or server compromise. Follows SANS PICERL \u2014 Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned \u2014 and includes a post-mortem template. Invoke when a site is defaced, when malware or webshells appear, when admin accounts arrive unannounced, or when a provider sends an abuse notice.",
+      "description": "Run a structured response to a suspected web or server compromise. Follows SANS PICERL — Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned — and includes a post-mortem template. Invoke when a site is defaced, when malware or webshells appear, when admin accounts arrive unannounced, or when a provider sends an abuse notice.",
       "path": "incident-response/SKILL.md"
     },
     {
@@ -153,7 +167,7 @@
       "slug": "llm-coding-failure-modes",
       "name": "llm-coding-failure-modes",
       "domain": "ai-llm",
-      "description": "Recognize the recurring security failure modes of LLM coding agents \u2014 Claude Code, Copilot, Cursor, Windsurf, and similar. Covers bulk operations without per-item review, safety-guard bypass as friction removal, acting on indirect injection, secrets in logs and commits, slopsquatting, outdated training patterns, sycophancy on insecure proposals, and silent error swallowing. Invoke when reviewing LLM-written code, designing a coding agent's guardrails, or onboarding a team to LLM-assisted workflows.",
+      "description": "Recognize the recurring security failure modes of LLM coding agents — Claude Code, Copilot, Cursor, Windsurf, and similar. Covers bulk operations without per-item review, safety-guard bypass as friction removal, acting on indirect injection, secrets in logs and commits, slopsquatting, outdated training patterns, sycophancy on insecure proposals, and silent error swallowing. Invoke when reviewing LLM-written code, designing a coding agent's guardrails, or onboarding a team to LLM-assisted workflows.",
       "path": "llm-coding-failure-modes/SKILL.md"
     },
     {
@@ -185,6 +199,13 @@
       "path": "nextjs-security/SKILL.md"
     },
     {
+      "slug": "object-storage-security",
+      "name": "object-storage-security",
+      "domain": "infrastructure",
+      "description": "Secure object storage buckets on S3, Cloudflare R2, GCS, and MinIO against public exposure and credential abuse. Covers public access audit, bucket policy vs ACL vs IAM, presigned URLs with scoped credentials, CORS for direct browser upload, encryption choices, versioning and object lock, and access logging. Invoke when creating a new bucket, auditing inherited buckets for exposure, or wiring an app to storage with presigned uploads.",
+      "path": "object-storage-security/SKILL.md"
+    },
+    {
       "slug": "payload-cms-security",
       "name": "payload-cms-security",
       "domain": "web-application",
@@ -204,6 +225,13 @@
       "domain": "ai-llm",
       "description": "Contain direct and indirect prompt injection in LLM-integrated applications. Covers source-of-trust tagging, tool-use confirmation after untrusted input, output validation, markdown-image exfiltration prevention, and context-window hygiene. Invoke when building any app where untrusted text reaches an LLM, when the LLM has tools that act on real systems, or after a suspected injection incident.",
       "path": "prompt-injection-defense/SKILL.md"
+    },
+    {
+      "slug": "rag-security",
+      "name": "rag-security",
+      "domain": "ai-llm",
+      "description": "Secure the trust boundaries RAG adds beyond a plain LLM app. Covers retrieval-time document authorization, tenant isolation in vector databases, indirect injection via retrieved content, ingestion poisoning, citation and embedding leakage, stale-permission drift, and grounding integrity. Invoke when building or reviewing a RAG feature, when indexing access-controlled or multi-tenant corpora, or after a cross-tenant leak or injection incident.",
+      "path": "rag-security/SKILL.md"
     },
     {
       "slug": "secret-hygiene",

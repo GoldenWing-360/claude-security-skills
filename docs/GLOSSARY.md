@@ -17,6 +17,7 @@ Definitions for terms used across the skills. Brief — for depth see the releva
 ## C
 
 - **CAA record** — DNS record restricting which certificate authorities may issue certificates for a domain.
+- **Certificate Transparency (CT) logs** — Public append-only logs every CA must write issued certificates to. Monitoring them reveals unexpected issuance for your domains — an early takeover or phishing signal.
 - **CIS Benchmark** — Configuration baseline published by the Center for Internet Security, per OS or product. More detailed than this repo's hardening skills.
 - **CNI** — Container Network Interface. The plugin system that gives Kubernetes pods their network. `NetworkPolicy` enforcement requires a CNI that supports it (Calico, Cilium, Weave, Antrea).
 - **cosign / sigstore** — Modern open-source signing tooling for container images and artifacts.
@@ -48,6 +49,7 @@ Definitions for terms used across the skills. Brief — for depth see the releva
 ## K
 
 - **Keychain (Apple)** — System-managed secure storage on iOS / macOS. Accessed via the Security framework with accessibility tiers (`WhenUnlockedThisDeviceOnly`, etc.).
+- **Keystore (Android)** — Android's hardware-backed key storage. Keys are generated and used inside secure hardware and never exported; StrongBox is the dedicated-secure-element tier.
 - **Kyverno / Gatekeeper (OPA)** — Kubernetes admission controllers. Enforce policy-as-code on resource submission.
 
 ## L
@@ -68,6 +70,7 @@ Definitions for terms used across the skills. Brief — for depth see the releva
 
 ## O
 
+- **Object Lock** — S3 / R2 write-once-read-many (WORM) mode. Objects cannot be deleted or overwritten for a retention period, even by the account owner — the backbone of ransomware-resistant backups.
 - **OIDC** — OpenID Connect. Used in GitHub Actions to federate identity to AWS / GCP / Cloudflare without long-lived secrets.
 - **OWASP API Top 10** — Catalog of the 10 most common API security failures. See `api-security`.
 - **OWASP LLM Top 10** — Catalog of LLM-application-specific security risks. See `llm-app-security`.
@@ -76,10 +79,13 @@ Definitions for terms used across the skills. Brief — for depth see the releva
 
 - **PICERL** — Preparation → Identification → Containment → Eradication → Recovery → Lessons Learned. Standard incident-response phase model.
 - **Pinning** — Hardcoding the expected public key or certificate of a remote service into the client. Defeats CA-level MITM but introduces operational fragility.
+- **Play Integrity** — Google's attestation API reporting whether an app runs unmodified on a certified Android device. A risk signal, not a security boundary.
 - **Pod Security Standards (PSS)** — Kubernetes built-in policy levels (Privileged / Baseline / Restricted).
+- **Presigned URL** — Time-limited signed URL granting a single storage operation (upload / download) without sharing credentials. Inherits the permissions of the signing identity — sign with a scoped key.
 
 ## R
 
+- **RAG** — Retrieval-Augmented Generation. LLM answers grounded in documents fetched from an index at query time. Security-relevant because retrieval crosses authorization boundaries the LLM cannot enforce.
 - **RBAC** — Role-Based Access Control. The Kubernetes mechanism for "who can do what."
 - **RLS** — Row-Level Security (Postgres). Per-row policy enforced by the database, useful for multi-tenant isolation.
 - **RPO / RTO** — Recovery Point Objective (acceptable data loss, in time) / Recovery Time Objective (acceptable downtime during recovery). See `backup-disaster-recovery`.
@@ -92,6 +98,7 @@ Definitions for terms used across the skills. Brief — for depth see the releva
 - **Slopsquatting** — Typosquatting that targets LLM-hallucinated package names. The attacker registers names LLMs invent so that the next `npm install <hallucinated-name>` lands on attacker code.
 - **SPF** — Sender Policy Framework. DNS-published list of servers allowed to send mail for a domain.
 - **SSRF** — Server-Side Request Forgery. App fetches a URL controlled by the user; attacker uses it to hit internal services or cloud metadata.
+- **Subdomain takeover** — A DNS record (usually a CNAME) still points at a deprovisioned service whose name anyone can claim. The claimant then serves content under your domain.
 
 ## T
 
